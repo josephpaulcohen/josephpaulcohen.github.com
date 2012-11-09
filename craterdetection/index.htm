@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Crater Detection Website</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.9.custom.css" />
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19564702-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+
+<center>
+<div class="ui-widget" style="font-size: 72px;">
+Crater Detection Website
+</div>
+<div class="ui-widget" style="font-size: 20px;">
+By Joseph Paul Cohen
+</div>
+</center>
+
+<div class="ui-state-error ui-corner-all ui-widget" style="margin:10px;">
+<center>
+	<p>This crater detection software was written with Professor Wei Ding at the University of Massachuestts.  
+	It takes as input a Portable GrayMap format (PGM) image with a known meter per pixel value. 
+	PGMs can be generated from JPEG2000 products from JPL.</p>
+</center>
+</div>
+
+<center>
+<a href="cdw_main.png">
+<img src="cdw_main.png" alt="main screen" style="width:400px;"/>
+</a>
+</center>
+
+<div class="ui-state-error ui-corner-all ui-widget" style="margin:10px;">
+<center>
+	<p>Results are presented as a Portable Network Graphics (PNG) image, 
+	ArcGIS data in a zip file, and a histogram of crater sizes. 
+	The results page can be sent as a link.</p>
+</center>
+</div>
+
+<br />
+<center>
+<a href="cdw_results.png">
+<img src="cdw_results.png" alt="results screen" style="width:400px;"/>
+</a>
+</center>
+
+<div class="ui-state-error ui-corner-all ui-widget" style="margin:10px;">
+<center>
+	<p>There is an administration GUI (with password protection) that allows the administor to view, pause, restart, and delete detection jobs.
+	The system uses the Quartz Enterprise Job Scheduler <a href="http://www.quartz-scheduler.org/">http://www.quartz-scheduler.org/</a> 
+	so jobs can be ran on multiple threads and remote systems.</p>
+</center>
+</div>
+
+<br />
+<center>
+<a href="cdw_admin.png">
+<img src="cdw_admin.png" alt="admin screen" style="width:400px;"/>
+</a>
+</center>
+<br />
+
+</body>
+</html>

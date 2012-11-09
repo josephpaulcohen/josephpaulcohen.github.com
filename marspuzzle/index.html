@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Snapfit.js (javascript jigsaw puzzle functionality for images)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-language" content="en">
+	<meta name="Author" lang="en" content="snapfit.netzgesta.de - Christian Effenberger">
+	<meta name="Publisher" lang="en" content="www.netzgesta.de">
+	<meta name="Copyright" lang="en" content="www.netzgesta.de - Christian Effenberger">
+	<meta name="Generator" lang="en" content="Christian Effenberger">
+	<meta name="Description" lang="en" content="snapfit.js allows you to add jigsaw puzzle functionality to images on your webpages through unobtrusive javascript">
+	<meta name="Keywords" lang="en" content="snapfit.js, javascript puzzle, jigsaw puzzle, Internet Explorer, Mozilla, Firefox, Opera, Safari">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+a { color: blue; font-style:italic; text-decoration:none; }
+tt {color: green;}
+b {color: #993333;}
+body { background: url(images/backgrnd.jpg); color: black; font-family: Georgia; line-height: 1.5; margin: 0.5em 1em;}
+h2 { line-height: 1; }
+.demo { float: left; margin: 0px; padding: 12px; text-align: left;}
+.logo { float: left; margin: 0 1em 1em 0; position: relative; width: 360px; height: 160px; }
+#guru { float: none; padding: 4px; width: 99%; height: auto; text-align: center; background-color: black; }
+#guru div { float: none; border: solid 3px red; padding: 4px; font-family: monospace; font-size: 1.25em; width: auto; height: auto; color: red; text-align: center; text-decoration: blink; }
+.bookmarks { white-space: nowrap; width: 98%; margin: 0; padding-top: 10px; border-top: 1px dotted gray;}
+</style>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<script type="text/javascript" src="snapfit.js"></script>
+</head>
+<body>
+
+<div style="outline: 1px solid silver"><img id="girl" onload="snapfit.add(this,{callback: function() {alert('You solved the puzzle!');}, aborder:true, aimage:true, polygon:true, space:20});" src="images/rover.jpg" width="800" height="800" border="0" alt="rover" /></div>
+<strong>Level</strong> <select id="level" size="1" onchange="snapfit.reset(document.getElementById('girl'),parseInt(this.options[this.selectedIndex].value));">
+<option value="0">160px (extrem low)</option>
+<option value="1">128px (very low)</option>
+<option value="2">104px (low)</option>
+<option value="3"selected="selected">080px (medium)</option>
+<option value="4">064px (high)</option>
+<option value="5">056px (very high)</option>
+<option value="6">048px (extrem high)</option>
+</select>
+<button type="button" onclick="snapfit.admix(document.getElementById('girl'));">Admix</button>
+<button type="button" onclick="snapfit.solve(document.getElementById('girl'));">Solve</button><br>
+<small><b>move</b>: Click 'n drag!<br><b>rotate</b>: Doubleclick!<br><b>flip-y</b>: Doubleclick 'n press [shift] or Middle Mouse Button!<br><b>flip-x</b>: Doubleclick 'n press [alt] or Right Mouse Button!</small>
+
+<br/>
+<br/>
+
+<div>
+<img id="test" onload="snapfit.add(this,{aopacity:0.0001, mixed:true});" src="images/rover.jpg" width="800" height="800" border="0" alt="test" />
+</div>
+<strong>OnMouseOver keyboard support:</strong><small><br><b>Reset</b>: Press [escape]!<br><b>Solve</b>: Press [enter]!<br><b>Mixup</b>: Press [backspace]!<br><b>Admix</b>: Press [delete]!</small>
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+   <title>kmlnetworklink_example.html</title>
+   <script src="http://www.google.com/jsapi?key=ABQIAAAAs_yUaeeCeq3DcMZinOfTvRTov9KNn1ndZ8h48iku6vBWm5wnYxSEyXXwD3iODS2ry5WtWl3_ekHIqw"></script>
+   <script type="text/javascript">
+      var ge;
+      google.load("earth", "1");
+
+      function init() {
+         google.earth.createInstance('map3d', initCB, failureCB);
+      }
+
+      function initCB(instance) {
+         ge = instance;
+         ge.getWindow().setVisibility(true);
+
+         var link = ge.createLink('');
+         
+         //var href = 'http://code.google.com/apis/earth/documentation/samples/kml_example.kml'
+         var path = document.location;
+         var href = path + 'zipsMA.kmz';
+         link.setHref(href);
+
+         var networkLink = ge.createNetworkLink('');
+         networkLink.set(link, true, true); // Sets the link, refreshVisibility, and flyToView.
+
+         ge.getFeatures().appendChild(networkLink);
+      }
+
+      function failureCB(errorCode) {
+      }
+
+      google.setOnLoadCallback(init);
+   </script>
+
+</head>
+<body>
+    <div id="fullscreencontainer" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+	   <div id="map3d" style="width: 100%; height: 100%;"></div>
+	   </div>
+	
+</body>
+</html>

@@ -1,0 +1,831 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<title>Joseph Paul Cohen</title>
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>
+<script type="text/javascript" src="js/bibtex_js.js"></script>
+<script type="text/javascript" src="js/jquery.transit.min.js"></script>
+<link href="css/smoothness/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript"> 
+	$(function() {
+		
+		$(".tabs").tabs();
+		
+		
+		// make everything spin
+		$("img").click(function(){
+			$(this).transition({
+    			perspective: '700px',
+ 				rotateY: '+=180deg'},
+ 				3000);
+			});
+		
+		//setup bibtex
+		$(".bibtex_template").hide();
+  		(new BibtexDisplay()).displayBibtex($("#bibtex_input").text(), $("#bibtex_display"));
+	    $(".bibtex_error").hide();
+	    $("#bibtex_input").hide();
+	    
+
+
+
+	});
+ 
+ 
+	
+</script> 
+
+<style type="text/css">
+  body 
+  {
+    background-color: #696969; 
+    font-size: small;
+  }
+  
+  .tabs
+  {
+  	margin-top: 10px;
+  }
+  
+  img.border {
+    outline:none;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    border:1px solid rgba(0,0,0, 0.8); 
+}
+  
+</style>
+
+</head>
+<body>
+
+<div>
+<center>
+<div style="width: 960px;">
+
+				<div class="ui-widget">
+					<div class="ui-state-highlight ui-corner-all hatgame"
+						style="margin-top: 20px; padding: 0 .7em;">
+						<center>
+							<p>
+								<strong class="grav">Joseph Paul Cohen</strong> <br /> <span class="grav">Ph.D Student </span> <br />
+								<span class="grav">Welcome to my webpage at The University of Massachusetts Boston</span>
+							</p>
+						</center>
+						<div  style="height:400px;">
+						<div style="float: left; width: 50%;">
+							<img class="border grav" alt="Joseph Paul Cohen" src="img/josephpaulcohen2.png">
+							<center>
+								<span class="grav">joecohen-at-cs.umb.edu</span>,<span class="grav">joecohen-at-ieee.org </span> 
+								<br>
+								<button class="grav" id="button"
+									class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+									role="button" aria-disabled="false"
+									onclick="javascript:var script = document.createElement('script'); script.src='http://gravityscript.googlecode.com/svn/trunk/gravityscript-explicit.js'; document.body.appendChild(script);void(0);">
+									<span class="ui-button-text">Add Gravity</span><br>
+								</button>
+								
+								<a href="keys"> <img class="grav" src="keys/pgp.png" /></a>
+							</center>
+						</div>
+						<div>
+						</div>
+						<div style="float: right;">
+							<iframe
+								src="https://www.google.com/calendar/embed?showCalendars=0&showTz=0&showTabs=0&showPrint=0&showNav=0&mode=AGENDA&src=qmgb54mco8rt7c64lkmtql6tdc%40group.calendar.google.com&ctz=America/New_York"
+								style="border: 0" width="400px" height="400px" frameborder="0"
+								scrolling="no"> </iframe>
+							<br> <span class="grav" style="font-size: x-small;"> <a
+								href="https://www.google.com/calendar/ical/qmgb54mco8rt7c64lkmtql6tdc%40group.calendar.google.com/public/basic.ics">Here
+									is the public ICS feed (For Outlook)</a><br> <a
+								href="https://www.google.com/calendar/b/0/embed?src=qmgb54mco8rt7c64lkmtql6tdc@group.calendar.google.com&ctz=America/New_York">Public
+									HTML view of the calendar</a>
+							</span>
+						</div>
+						</div>
+						<br>
+
+
+	<div class="bibtex_template">
+		<div class="if author" style="font-weight: bold;">
+			<span class="if year"> <span class="year"></span>,
+			</span> <span class="title"></span> <span class="if url"
+				style="margin-left: 20px"> <a class="url"
+				style="color: black; font-size: 10px"><img
+					src="img/pdf.png" alt="Download PDF" /></a>
+			</span>
+		</div>
+		<div style="margin-left: 10px; margin-bottom: 5px;">
+			<span class="author"></span>
+		</div>
+		<div style="margin-left: 20px; margin-bottom: 5px;"
+			class="if booktitle">
+			<span class="booktitle"></span>, <span class="address"></span>
+		</div>
+		<div style="margin-left: 30px; margin-bottom: 5px;">
+			Abstract: <span style="font-size: small" class="abstract"></span>
+		</div>
+
+	</div>
+
+	<div id="bibtex_area"
+		style="text-align: left; font-size: small; padding: 50px">
+		<span style="font-size: medium;">Publications:</span>
+		<div id="bibtex_display"></div>
+		<pre id="bibtex_input" style="font-size: xx-small; width:700px;white-space: pre-wrap;word-wrap:break-word;">
+@inproceedings{cheung_effectiveness_2012,
+	address = {Las Vegas, Nevada, {USA}},
+	title = {Effectiveness of Cybersecurity Competitions},
+	volume = {1},
+	abstract = {There has been a heightened interest among {U.S.} government agencies to fund cybersecurity workforce development. These efforts include offering universities funding for student scholarships, funding for building capacity in cybersecurity education, as well as sponsoring cybersecurity competitions, games, and outreach programs. This paper examines the effectiveness of cybersecurity competitions in educating students. Our study shows that though competitions do pique students' interest, the effectiveness of this approach in producing more high quality professionals can be limited. One reason is that the knowledge barrier to compete in these competitions is high. To be successful, students have to be proficient in operating systems, application services, software engineering, system administration and networking. Many Computer Science and Information Technology students do not feel qualified, and consequently this reduces participation from a wider student audience. Our approach takes aims at lowering this barrier to entry. We employ a hands-on learning methodology where students attend lectures on background knowledge on weekdays and practice what they learn in weekend workshops. A virtual networking environment is provided for students to practice network defense in the workshops and on their own time.},
+	booktitle = {Proceedings of the 2012 International Conference on Security \& Management},
+	publisher = {{SAM} 2012},
+	author = {Cheung, Ronald S. and Cohen, Joseph Paul and Lo, Henry Z. and Elia, Fabio and {Carrillo-Marquez}, Veronica},
+	month = jul,
+	year = {2012},
+	url = {http://www.cs.umb.edu/~joecohen/papers/seccomp.pdf}
+}
+
+
+@inproceedings{cohen_mars_2012,
+	title = {Mars Weekend: A Panel and Games at the Museum of Science Boston},
+	abstract = {This ongoing outreach project uniquely combines the data, systems, and resources of four existing {NASA-funded} research projects on Mars robotic navigation {(MER} Participating Scientist project and {ExoMars} {PanCam} project), intelligent Mars data processing {(AISR} Crater Detection project), and Lunar mapping {(LRO} Participating Scientist project). The project aims to stimulate the public excitement about Mars and Lunar science and exploration and to enrich the public with expertise developed at The Ohio State University {(OSU)}, the University of Massachusetts Boston {(UMB)}, and the Lunar and Planetary Institute {(LPI)} through our outreach partner, the Museum of Science, Boston.},
+	booktitle = {Lunar and Planetary Institute Science Conference Abstracts},
+	author = {Cohen, Joseph Paul and Ding, Wei and Sable, Julia and Li, Ron and Stepinski, Tomasz F.},
+	month = mar,
+	year = {2012},
+	url = {http://www.cs.umb.edu/~joecohen/papers/marsweekend.pdf}
+}
+
+@inproceedings{liu_bernoulli_2011,
+	address = {Chicago, Illinois},
+	title = {Bernoulli Trials Based Feature Selection for Crater Detection},
+	abstract = {Counting craters is a fundamental task of planetary science because it provides the only tool for measuring relative ages of planetary surfaces. However, advances in surveying craters present in data gathered by planetary probes have not kept up with advances in data collection. One challenge of auto-detecting craters in images is to identify an image's features that discriminate it between craters and other surface objects. The problem of optimal feature selection is known to be {NP-hard} and the search is computationally intractable. In this paper we propose a wrapper based randomized feature selection method to efficiently select relevant features for crater detection. We design and implement a dynamic programming algorithm to search for a relevant feature subset by removing irrelevant features and minimizing a cost objective function simultaneously. In order to only remove irrelevant features we use Bernoulli Trials to calculate the probability of such a case using the cost function. Our proposed algorithms are empirically evaluated on a large high-resolution Martian image exhibiting a heavily cratered Martian terrain characterized by heterogeneous surface morphology. The experimental results demonstrate that the proposed approach achieves a higher accuracy than other existing randomized
+approaches to a large extent with less runtime.},
+	booktitle = {Proceedings of the 19th {ACM} {SIGSPATIAL} International Conference on Advances in Geographic Information Systems},
+	publisher = {{ACM}},
+	author = {Liu, Siyi and Ding, Wei and Cohen, Joseph Paul and Simovici, Dan and Stepinski, Tomasz F.},
+	month = nov,
+	year = {2011},
+	url = {http://www.cs.umb.edu/~joecohen/papers/BernoulliTrial.pdf}
+},
+
+@inproceedings{cheung_challenge_2011,
+	address = {Las Vegas, Nevada, {USA}},
+	title = {Challenge Based Learning in Cybersecurity Education},
+	volume = {1},
+	abstract = {This paper describes the application of the Challenge Based Learning {(CBL)} methodology to cybersecurity education. The overall goal is to improve student learning via a multidisciplinary approach which encourages students to collaborate with their peers, ask questions, develop a deeper understanding of the subject and take actions in solving real-world challenges. In this study, students established essential questions which reflected their interests in information security, formulated challenges on how to safeguard confidential information from cyber attacks and then came up with solutions to secure their information and network. For guiding activities, students participated in two cybersecurity competitions against their peers from other local universities. In these simulated real-life competitions, students were forced to work together, think on their own two feet and apply their knowledge to defend against cyber attacks. Assessments performed after the study showed improvement in students' computer and security skills, interest in learning security and ability to teach others.},
+	booktitle = {Proceedings of the 2011 International Conference on Security \& Management},
+	publisher = {{SAM} 2011},
+	author = {Cheung, Ronald S. and Cohen, Joseph Paul and Lo, Henry Z. and Elia, Fabio},
+	month = jul,
+	year = {2011},
+	url = {http://www.cs.umb.edu/~joecohen/papers/cbl.pdf}
+},
+
+@inproceedings{cohen_genetically_2011,
+	address = {Perth, Western Australia},
+	title = {Genetically Enhanced Feature Selection of Discriminative Planetary Crater Image Features},
+	abstract = {Using gray-scale texture features has recently become a new trend in supervised machine learning crater detection algorithms. To provide better classification of craters in planetary images, feature subset selection is used to reduce irrelevant and redundant features. Feature selection is known to be {NP-hard.} To provide an efficient suboptimal solution, three genetic algorithms are proposed to use greedy selection, weighted random selection, and simulated annealing to distinguish discriminative features from indiscriminate features. A significant increase in the classification ability of a Bayesian classifier in crater detection using image texture features.},
+	booktitle = {Proceedings of the The 24th Australasian Joint Conference on Artificial Intelligence},
+	author = {Cohen, Joseph Paul and Liu, Siyi and Ding, Wei},
+	month = dec,
+	year = {2011},
+	url = {http://www.cs.umb.edu/~joecohen/papers/geneticcrater.pdf}
+}
+</pre>
+	</div>
+	<div class="bibtex_error" style="font-size: x-large;">Error parsing bibtex, Please enable JavaScript</div>
+
+</div>
+				</div>
+
+				<div class="tabs">
+					<ul>
+						<li><a href="#umblatex">UMB LaTeX Homework Template with
+								Examples</a></li>
+					</ul>
+					<div id="umblatex" style="">
+					<a href="https://umb-latex-homework.googlecode.com/svn/trunk/">
+						<img style="width: 300px;" src="img/umblatex.png" />
+					</a>
+
+						<p>I made a LaTeX homework template so that students at UMB
+							can hit the ground running with LaTeX. This template includes
+							standard features such as a title page, header and footer with
+							page numbers and name, margin and spacing, as well as examples of
+							LaTeX features I used as an undergraduate.</p>
+						<p>
+							<img class="border" style="width: 300px;" src="img/umblatex-dfa.png" /> 
+							<img class="border" style="width: 300px;" src="img/umblatex-tree.png" />
+							<br>The
+							template explains how to draw Automatons such as DFAs, NFAs, and
+							PDAs. It's much easier to copy and paste a DFA then to redraw
+							one. It also includes examples for drawing trees.
+							These examples use the Tikz library so all code is contained
+							inside the .tex file.
+
+						</p>
+
+						<p>
+							<img class="border" style="width: 300px;" src="img/umblatex-alg.png" /><br>
+							Examples for writing algorithms with numbers lines and scope lines for "for" 
+							and "if" statements are included.
+
+						</p>
+						<p>
+							<img class="border" style="width: 300px;" src="img/umblatex-matrix.png" />
+							<img class="border" style="width: 300px;" src="img/umblatex-table.png" />
+							<br>
+							Examples of matrices and tables are included. Many variations are used in 
+							practice and so many variations are included.
+
+						</p>
+						<br> <br>
+						<div style="text-align: left">
+							<a href="https://umb-latex-homework.googlecode.com/svn/trunk/">SVN
+								Access to Source</a><br> <a
+								href="http://texlipse.sourceforge.net/">Texlipse plugin for
+								Eclipse</a><br>
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<div class="tabs">
+					<ul>
+						<li><a href="#hackingjavaapplets">Hacking: Modern Day
+								Exploits with Java Applets</a></li>
+					</ul>
+					<div id="hackinglessonslearned" style="height: 300px;">
+						<img style="float: right;" src="talks/IntroCyberSecurity.png" />
+
+						This is about the dangers of trust in todays world. I first talk
+						about XSS attacks using Java Applets because they have a different
+						same-origin policy then JavaScript AJAX requests. I then talk
+						about how dangerous signed Applet Jars are if you have trusted the
+						CA that signed the Jar. <br> <br> <br> <br> <br>
+						<div style="text-align: left">
+							<a href="https://sites.google.com/site/umbcsclub/">UMB CS
+								Club</a><br> <br> <br> <a
+								href="http://prezi.com/fqfpw3hxtdkb/java-applet-hacking/">View
+								sides on Prezi.com</a><br> <a
+								href="talks/java-applet-hacking.zip">Download presentation</a><br>
+						</div>
+					</div>
+				</div>
+
+				<div class="tabs" style="-webkit-transform: rotate(1deg);"> 
+		<ul> 
+			<li><a href="#mitctf">MITCTF 2011</a></li> 
+		</ul> 
+		<div id="hackinglessonslearned" style="height:410px;text-align: left;">
+		<img style="float:right; padding: 50px;" src="img/mitctfroot.jpg" />
+		
+		
+		<div style=" padding: 10px; width:650px;">
+		<h1>2011 MIT Lincoln Laboratory / CSAIL Capture the Flag Competition</h1>
+		A team from UMB consisting of me, Veronica Carrillo Marquez, 
+		Fabio Elia, and Henry Z Lo  won 2nd place.  We crafted our own 
+		exploit during the competition that was used to erase all by one 
+		opposing teams hard drive.  We were able to obtain a shell by 
+		creating a specially crafted HTTP cookie that had access to a 
+		poorly filtered eval() call. We were able to avoid specific function 
+		names in order to launch a remote interactive shell using PHP pipes.  
+		This method used an RPC call in wordpress which didn't leave any traces 
+		in the log files. Our exploit and payload needed to be base64 encoded 
+		which made it very hard to reuse by other teams if they had someone 
+		captured the attack in action. We scripted the creation of payloads 
+		which allowed us to change ports and ip addresses to counter other
+		 teams defensive measures.  
+		<br>
+		Once we gained a shell on the target machines we were able to use a
+		 recently discovered LPE to obtain root permissions.  The attack was
+		  sloppy and caused a kernel oops when we disconnected.  Next year we
+		   will be more prepared for post-exploitation.
+		
+		
+		<br>
+		
+		<a href="http://mitctf2011.wikispaces.com/">MIT CTF 2011 Website</a><br>
+		<a href="http://www.cs.umb.edu/news_and_events/announcements/162/">UMB CS Dept news</a><br>
+		
+		</div>
+		</div> 
+	</div> 
+	
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#acmsigspatial2011">ACM SIGSPATIAL 2011</a></li> 
+		</ul> 
+		<div id="acmsigspatial2011">
+
+		<center>
+		<p>
+			<img src="other/sigspatial_pres_s.jpg" />
+		</p>
+			<br/>
+			<p>
+			In November I presented a "Bernoulli Trials Based Feature Selection for Crater Detection" at the ACM SIGSPATIAL 2011 conference.
+			</p>
+			<p>ABSTRACT: Counting craters is a fundamental task of planetary
+						science because it provides the only tool for measuring relative
+						ages of planetary surfaces. However, advances in surveying craters
+						present in data gathered by planetary probes have not kept up with
+						advances in data collection. One challenge of auto-detecting
+						craters in images is to identify an image's features that
+						discriminate it between craters and other surface objects. The
+						problem of optimal feature selection is known to be NP-hard and
+						the search is computationally intractable. In this paper we
+						propose a wrapper based randomized feature selection method to
+						efficiently select relevant features for crater detection. We design
+						and implement a dynamic programming algorithm to search for a
+						relevant feature subset by removing irrelevant features and
+						minimizing a cost objective function simultaneously. In order to
+						only remove irrelevant features we use Bernoulli Trials to
+						calculate the probability of such a case using the cost function.
+						Our proposed algorithms are empirically evaluated on a large
+						high-resolution Martian image exhibiting a heavily cratered
+						Martian terrain characterized by heterogeneous surface morphology.
+						The experimental results demonstrate that the proposed approach
+						achieves a higher accuracy than other existing randomized
+						approaches to a large extent with less runtime.</p>
+			
+		</center>
+		</div>
+	</div> 	
+	
+	
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#googlevisit2011">Google Visit</a></li> 
+		</ul> 
+		<div id="googlevisit2011">
+
+		<center>
+		<p>
+			<img src="other/android_bld_s.jpg" />
+			
+			<img src="other/google_maps_bld.jpg" />
+		</p>
+			<br/>
+			<p>
+			In November I visited the Google HQ in Mountain View, CA. Top picture from left to right Judd Reed, Siyi Liu, me, Sean O'Malley.
+			</p>
+		</center>
+		</div>
+	</div> 
+	
+
+
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#chrismetasploit">Rapid7 Product Marketing</a></li> 
+		</ul> 
+		<div id="chrismetasploit" style="height:500px;">
+		<p>
+			<img style="float:right;" src="other/chris_metasploit.jpg" />
+			Me and the Product Marketing Manager at Rapid7, Christian Kirsch. Rapid7 supports Metasploit and NeXpose.
+			
+			<br/><br/>
+			<img src="other/metasploit.png" />
+			<br>
+			<br>
+			<a href="http://www.rapid7.com/">Rapid7</a><br>
+			
+			<a href="http://www.metasploit.com/svn/framework3/trunk/">Metasploit</a><br>
+		</p>
+		</div> 
+	</div> 
+	
+
+
+
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#numbers">Illegal Numbers</a></li> 
+		</ul> 
+		<div id="numbers" >
+		<p>
+			It has come to my attention that this number and numbers like it are illegal.  I find that outrageous and I hope you do too. <br/><br/>
+			
+pub: C2 D4 AA F3 19 35 50 19 AF 99 D4 4E 2B 58 CA 29 25 2C 89 12 3D 11 D6 21 8F 40 B1 38 CA B2 9B 71 01 F3 AE B7 2A 97 50 19<br/>
+		
+
+		</p>
+
+		
+		</div> 
+	</div> 	
+	
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#salt">Utah Salt Flats</a></li> 
+		</ul> 
+		<div id="salt" >
+	
+		<p>
+		<center>
+		<img src="img/awesome.jpg" />
+		</center>
+		</p>
+
+		
+		</div> 
+	</div> 	
+	
+	
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#secprofile">Security Profile of a Web Browser</a></li> 
+		</ul> 
+		<div id="secprofile" >
+	
+		<p>
+		This page is designed to help identify attack points for a users browser.  <br>
+		
+		<a href="http://www.cs.umb.edu/~joecohen/p">Instructions</a><br>
+		<a href="http://www.cs.umb.edu/~joecohen/p/?fwd=http://www.cs.umb.edu/~joecohen/p&id=homepage">Let me scan your browser</a><br>
+		</p>
+
+		
+		</div> 
+	</div> 
+	
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#ianeclipse">Eclipse Marketing</a></li> 
+		</ul> 
+		<div id="ianeclipse" style="height:400px;">
+		<img style="float:right;" src="other/ianeclipse.jpg" />
+		During an Eclipse Demo Day for Indigo I met Ian Skerrett the marketing director of the Eclipse Foundation 
+		
+		<br/><br/>
+		<img src="other/eclipse.png" />
+		<br>
+		<br>
+		<a href="http://www.meetup.com/boston-java/events/17773621/">Eclipse Demo Day Boston</a><br>
+		
+		<a href="http://www.eclipse.org/org/foundation/staff.php">Eclipse Foundation Staff</a><br>
+		
+		</div> 
+	</div> 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#marsweekend">Mars Weekend</a></li>
+		</ul> 
+		<div id="marsweekend" >
+		<center>
+		<img src="other/marsweekend.JPG" alt="Ron Li, Joseph Paul Cohen, Wei Ding"/>
+		</center>
+		<br/>
+		<a href="craterseeker/game"><img style="float:right;" src="craterseeker/craterseeker_s.png" /></a>
+		
+		Wei Ding and I organized a Mars Weekend event at the Museum of Science Boston.  This event is part of an outreach project to educate the public on the work NASA is doing to explore Mars<br/><br/>
+		
+		<img src="craterseeker/mos_s.jpg" /><br/><br/>
+1 Museum Of Science Driveway<br/>
+Boston, MA 02114<br/>
+		
+		<br/>
+		
+		Saturday, June 04, 2011 | 10:00am to 4pm<br/>
+Sunday, June 05, 2011 | 10:00am to 4pm<br/>
+<br/>
+Meet researchers who work closely with NASA and the Jet Propulsion Laboratory to change how we look at the Universe.
+<br/><br/>
+Modern satellites orbiting the Moon and Mars are sending us
+astonishingly detailed images of craters, canyons, gullies, and lava flows. What can these surface features tell us about the past and present, and what do they mean for future exploration by robots and humans? If we found evidence of life on Mars, what would it look like?
+<br/><br/>
+During this weekend event, drive model Mars rovers on real and virtual terrain, and try activities and games for adults and kids. Enjoy short presentations about planetary exploration by guest scientists from the University of Massachusetts, Boston, Ohio State University, and the Lunar and Planetary Institute.
+		<br/><br/>
+		Event Pages:<br/>
+
+		<a href="http://www.mos.org/events_activities/events&d=4981">http://www.mos.org/events_activities/events&d=4981</a><br/>
+		<a href="http://upcoming.yahoo.com/event/8096182/MA/Boston/Mars-Weekend/Museum-of-Science/?ps=5">http://upcoming.yahoo.com/event/8096182/MA/Boston/Mars-Weekend/Museum-of-Science/?ps=5</a><br/>
+		<a href="http://www.yelp.com/events/boston-mars-weekend">http://www.yelp.com/events/boston-mars-weekend</a><br/>
+		<a href="http://eventful.com/boston/events/mars-weekend-/E0-001-039211234-6@2011060410">http://eventful.com/boston/events/mars-weekend-/E0-001-039211234-6@2011060410</a><br/>
+		<a href="http://calendar.boston.com/boston-ma/events/show/187665445-mars-weekend#">http://calendar.boston.com/boston-ma/events/show/187665445-mars-weekend#</a><br/>
+		<a href="http://www.cs.umb.edu/news_and_events/announcements/176/">http://www.cs.umb.edu/news_and_events/announcements/176/</a><br/>
+		<a href="http://www.events.org/cpage.aspx?e=36132">http://www.events.org/cpage.aspx?e=36132</a><br/>
+
+		<br>
+		<br>
+		<a href="http://vimeo.com/24552525">Watch a Video</a><br>
+		<a href="craterseeker/">Crater Seeker Game Site</a><br>
+		<a href="craterseeker/game">Play the game!</a><br>
+		<a href="http://www.cs.umb.edu/~joecohen/craterseeker/game.zip">Download the source</a><br>
+		
+		</div> 
+	</div> 
+	
+	
+	
+	
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#hackinglessonslearned">Hacking: Lessons Learned</a></li> 
+		</ul> 
+		<div id="hackinglessonslearned" style="height:300px;">
+		<img style="float:right;" src="talks/IMG_0410_s.JPG" />
+		
+		This was a kick off talk to create a security group at UMB. 
+		To get students interested in computer security.
+		To provide a place where students can learn and discuss about topics in security.
+		To share our experiences in cyber-defense competitions.
+
+		<br>
+		<br>
+		<a href="talks/Hacking_Lessons_Learned.pdf">PDF of Slides</a><br>
+		
+		</div> 
+	</div> 
+	
+
+		
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#gravityscript">GravityScript</a></li> 
+		</ul> 
+		<div id="Gravityscript">
+		<center>
+		<p>
+		<img  src="http://gravityscript.googlecode.com/svn/trunk/gravityscript.png" height="300px"/>
+		</p>
+		<p>This is a general version of the Google Gravity code written by Mr. Doob as a Chrome Experiment. </p>
+		<p>Just Include this file somewhere inside the body or head tag </p>
+		<p><tt>&lt;script src="http://gravityscript.googlecode.com/svn/trunk/gravityscript.js"&gt;&lt;/script&gt;</tt> </p>
+		<p>If you include this script or eval this javascript after the body tag has loaded it will do it's awesome thing. </p>
+
+<b>Demo:</b> <a href="http://www.cs.umb.edu/~joecohen/pwn/demos/wordpress.htm">http://www.cs.umb.edu/~joecohen/pwn/demos/wordpress.htm</a>
+		</center>
+		<br>
+		<a href="http://code.google.com/p/gravityscript/">Google Code Site</a><br>
+		
+		</div> 
+	</div> 
+	
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#neccdc">NECCDC</a></li> 
+		</ul> 
+		<div id="neccdc">
+		<center>
+			<img alt="team" src="other/neccdc.jpg">
+		<br/>
+		</center>
+		In 2011 I competed in the Northeast Collegiate Cyber Defense Competition (NECCDC) 
+		at EMC's Franklin Training Facility.  
+		The team is shown left to right as Francis Isabel, Ron Cheung
+		Fabio Elia,
+		Lvu,
+		Lior Ben-kiki,
+		Veronica Carrillo Marquez,
+		Royce Stubbs,
+		Me,
+		Henry Z. Lo
+		<br>
+		<br>
+		<a href="http://www.ccs.neu.edu/neccdc2011/index.html">http://www.ccs.neu.edu/neccdc2011/index.html</a><br>
+		</div> 
+	</div> 	
+	
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#kml">Java KML generation and display</a></li> 
+		</ul> 
+		<div id="kml">
+		<center>
+		<a href="zipcodes">
+			<img alt="display" src="zipcodes/MAzips.png">
+		</a>
+		<br/>
+		</center>
+		This is a sample of many things. Java code to generate a KML file 
+		programmatically and using the Google Earth plugin to showcase data on a 
+		website.
+		<br>
+		<br>
+		<a href="zipcodes">View in browser with Google Earth Plugin</a><br>
+		<a href="zipcodes/zipsMA.kml">KML file</a><br>
+		<a href="zipcodes/zipsMA.kmz">KMZ file (Better)</a><br>
+		<a href="http://code.google.com/p/kml-generation/">Code: http://code.google.com/p/kml-generation/</a><br>
+		</div> 
+	</div> 
+	
+	
+	
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#osuvisit">OSU MER Rover GPS Team Visit</a></li> 
+		</ul> 
+		<div id="osuvisit">
+		<center>
+		<img alt="team" src="osu/osu_rover_gps_team.JPG"><br/>
+		From left to right, Xuelian Meng, Rui Wu, me, Liwen Lin.
+		</center>
+		<br>
+		In late November 2010 I visited Dr. Ron Li's lab at Ohio State University to collaborate for
+		a NASA outreach grant involving Mars rover data from the MER project.
+		<br>
+
+		</div> 
+	</div> 
+
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#javatutor">Java Tutoring</a></li> 
+		</ul> 
+		<div id="javatutor">
+		<img alt="duke" src="javatutor/duke.png" style="float:right;">
+		<br>
+		
+I will be offering Java tutoring group sessions to the students of UMB. 
+This is sponsored the Women In Science club. It is offered to men and women.<br>
+		<br>
+		When:<br>
+		<table>
+		<thead>
+			<tr>
+				<td>
+				Date
+				</td>
+				<td>
+				Time
+				</td>
+			</tr>
+		<tr>
+			<td>
+			11/2/2010
+			</td>
+			<td>
+			7-9pm
+			</td>
+		</tr>
+		<tr>
+			<td>
+			11/9/2010
+			</td>
+			<td>
+			7-8pm
+			</td>
+		</tr>
+		<tr>
+			<td>
+			11/16/2010
+			</td>
+			<td>
+			7-8pm
+			</td>
+		</tr>
+		</table>
+		<br>
+
+Where:		<br>
+UMB CS Web Lab (S-3-28)		<br>
+		<br> 
+		What to bring:<br>
+Bring a laptop with Java installed. There are machines in the lab but<br>
+you should set everything up on your own computer.<br>
+Please install Eclipse if you can otherwise have DrJava.<br>
+		<br>
+		<a href="http://code.google.com/p/umb-java-tutoring-fall2010/">Google Code Group</a><br>
+		<a href="http://umb-java-tutoring-fall2010.googlecode.com/svn/trunk/JavaTutoringProject/src/">SubVersion Repo</a><br>
+
+		</div> 
+	</div> 
+
+
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#tgl2">Presentation at the 2010 M.A.S.S. and MassCUE Annual Technology Conference</a></li> 
+		</ul> 
+		<div id="tgl2">
+		<center>
+		<img alt="screenshot" src="tgl2/talk.jpg" >
+		<img alt="screenshot" src="tgl2/talk2.jpg" >
+		</center>
+		<br>
+		
+		On October 28th 2010 I presented with Henry Z Lo at the M.A.S.S. and MassCUE Annual Technology Conference about tools to educate students about computer science like Processing 
+		and Arduino.
+		<br> 
+		<br>
+		<a href="http://www.masscue.org/">MassCUE</a><br>
+		<a href="http://www.simpleswipe.com/registration/index.html">TGL^2</a><br>
+		<a href="http://www.massupt.org/">Massachusetts Association of School Superintendents (M.A.S.S.)</a>
+		<br> 
+		<br>
+		<a href="tgl2">All files</a> <br>
+		<a href="tgl2/Tools_to_Introduce_Computer_Science.pdf">Presentation (pdf)</a> <br>
+		
+		
+		</div> 
+	</div> 
+
+
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#observer">Observer Design Pattern Example</a></li> 
+		</ul> 
+		<div id="observer">
+		<center>
+		<a href="http://www.cs.umb.edu/~joecohen/observerdesignpattern/ObserverDesignPattern.jnlp">
+			<img alt="screenshot" src="observerdesignpattern/ObserverDesignPattern_s.jpg" >
+		</a>	
+		<br>
+		</center>
+		This is an example of the Observer Design Pattern using a data source and two Observers. One is a 3D Bar Chart and the other is a 3D Pie Chart <br> 
+		<br>
+		<a href="observerdesignpattern/">All files</a> <br>
+		<a href="observerdesignpattern/ObserverDesignPatternExample_src.zip">Source Code + Build Files</a> <br>
+		<a href="http://www.cs.umb.edu/~joecohen/observerdesignpattern/ObserverDesignPattern.jnlp">JNLP launch file</a> <br>
+		<a href="observerdesignpattern/CS310_Observer_Design_Pattern.pdf">Presentation (pdf)</a> <br>
+		 
+		
+		</div> 
+	</div> 
+	<!-- 
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#tabs-1">Personal website </a></li> 
+		</ul> 
+		<div id="tabs-1">
+		<center>
+		<img alt="screenshot" src="josephpcohen/website.jpg">
+		</center>
+		<br>
+		This is my personal Web Site <a href="http://www.josephpcohen.com">http://www.josephpcohen.com</a></div> 
+	</div> 	
+	-->
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#tabs-3">July 29th 2010 Computing Camp</a></li> 
+		</ul> 
+		<div id="tabs-3">
+		<center>
+		<img alt="award" src="compcamp/IMGP1891_s.jpg"><br>
+		</center>
+		This was a computing camp organized with Prof. Wei Ding and Joyce Wang <br> 
+		<a href="compcamp">Documents from event</a> <br>
+		<a href="http://kdl.cs.umb.edu/w/events/tech-savvy-computing-camp/">Knowledge Discovery Lab Article</a> <br>
+		<a href="http://www.umb.edu/research/entry/techsavvycomputingcamp/">Univerty of MAssachusetts Boston Article</a> <br>
+		
+		</div>
+
+		
+		</div> 
+	</div> 
+
+
+
+</center>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19564702-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+<!--  <iframe style="height: 0px; width: 0px;"src="http://www.cs.umb.edu/~joecohen/p/?id=homepageAuto"></iframe>
+
+
+<iframe style="height: 0px; width: 0px;" src="https://accounts.google.com/Logout"></iframe>
+-->
+
+</body>
+</html>
+

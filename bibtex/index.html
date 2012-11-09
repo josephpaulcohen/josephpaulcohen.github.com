@@ -1,0 +1,78 @@
+<html>
+<head>
+
+<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.14.custom.css" rel="stylesheet" />	
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.14.custom.min.js"></script>
+		
+<script type="text/javascript" src="bibtex_js.js"></script>
+
+</head>
+<body>
+
+<textarea id="bibtex_input" style="display:none;">
+
+
+
+@inproceedings{liu_bernoulli_2011,
+	address = {Chicago, Illinois},
+	title = {Bernoulli Trials Based Feature Selection for Crater Detection},
+	abstract = {Counting craters is a fundamental task of planetary science because it provides the only tool for measuring relative ages of planetary surfaces. However, advances in surveying craters present in data gathered by planetary probes have not kept up with advances in data collection. One challenge of auto-detecting craters in images is to identify an image's features that discriminate it between craters and other surface objects. The problem of optimal feature selection is known to be {NP-hard} and the search is computationally intractable. In this paper we propose a wrapper based randomized feature selection method to efficiently select relevant features for crater detection. We design and implement a dynamic programming algorithm to search for a relevant feature subset by removing irrelevant features and minimizing a cost objective function simultaneously. In order to only remove irrelevant features we use Bernoulli Trials to calculate the probability of such a case using the cost function. Our proposed algorithms are empirically evaluated on a large high-resolution Martian image exhibiting a heavily cratered Martian terrain characterized by heterogeneous surface morphology. The experimental results demonstrate that the proposed approach achieves a higher accuracy than other existing randomized
+approaches to a large extent with less runtime.},
+	booktitle = {Proceedings of the 19th {ACM} {SIGSPATIAL} International Conference on Advances in Geographic Information Systems},
+	publisher = {{ACM}},
+	author = {Liu, Siyi and Ding, Wei and Cohen, Joseph Paul and Simovici, Dan and Stepinski, Tomasz F.},
+	month = nov,
+	year = {2011}
+},
+
+@inproceedings{cheung_challenge_2011,
+	address = {Las Vegas, Nevada, {USA}},
+	title = {Challenge Based Learning in Cybersecurity Education},
+	volume = {1},
+	abstract = {This paper describes the application of the Challenge Based Learning {(CBL)} methodology to cybersecurity education. The overall goal is to improve student learning via a multidisciplinary approach which encourages students to collaborate with their peers, ask questions, develop a deeper understanding of the subject and take actions in solving real-world challenges. In this study, students established essential questions which reflected their interests in information security, formulated challenges on how to safeguard confidential information from cyber attacks and then came up with solutions to secure their information and network. For guiding activities, students participated in two cybersecurity competitions against their peers from other local universities. In these simulated real-life competitions, students were forced to work together, think on their own two feet and apply their knowledge to defend against cyber attacks. Assessments performed after the study showed improvement in students’ computer and security skills, interest in learning security and ability to teach others.},
+	booktitle = {Proceedings of the 2011 International Conference on Security \& Management},
+	publisher = {{SAM} 2011},
+	author = {Cheung, Ronald S. and Cohen, Joseph Paul and Lo, Henry Z. and Elia, Fabio},
+	month = jul,
+	year = {2011}
+},
+
+@inproceedings{cohen_genetically_2011,
+	address = {Perth, Western Australia},
+	title = {Genetically Enhanced Feature Selection of Discriminative Planetary Crater Image Features},
+	abstract = {Using gray-scale texture features has recently become a new trend in supervised machine learning crater detection algorithms. To provide better classification of craters in planetary images, feature subset selection is used to reduce irrelevant and redundant features. Feature selection is known to be {NP-hard.} To provide an efficient suboptimal solution, three genetic algorithms are proposed to use greedy selection, weighted random selection, and simulated annealing to distinguish discriminative features from indiscriminate features. A significant increase in the classification ability of a Bayesian classifier in crater detection using image texture features.},
+	booktitle = {Proceedings of the The 24th Australasian Joint Conference on Artificial Intelligence},
+	author = {Cohen, Joseph Paul and Liu, Siyi and Ding, Wei},
+	month = dec,
+	year = {2011}
+}
+</textarea>
+
+Publications:
+<div class="bibtex_template" >
+<div class="if author" style="font-weight: bold;">
+  <span class="if year">
+    <span class="year"></span>, 
+  </span>
+  <span class="author"></span>
+  <span class="if url" style="margin-left: 20px">
+    <a class="url" style="color:black; font-size:10px">(view online)</a>
+  </span>
+</div>
+<div style="margin-left: 10px; margin-bottom:5px;">
+  <span class="title"></span>
+</div>
+<span class="if booktitle">
+    <span class="booktitle"></span>, 
+</span>
+<div style="margin-left: 20px; margin-bottom:5px;">
+  <span class="abstract"></span>
+</div>
+
+</div>
+
+<div id="bibtex_display"></div>
+
+</body>
+</html>
