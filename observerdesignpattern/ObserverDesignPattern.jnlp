@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <jnlp spec="1.0+" 
-      codebase="http://www.cs.umb.edu/~joecohen/observerdesignpattern/">
+      codebase="http://josephpaulcohen.github.com/observerdesignpattern/">
   <information>
     <title>Observer Design Pattern Example - Joseph Paul Cohen</title>
     <vendor>Joseph Paul Cohen</vendor>
