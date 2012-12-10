@@ -46,10 +46,11 @@
 		    $("#bibtex_input").hide();
 		    
 	
-			$(".tabs").tabs();
 		    
-		    
-	
+			var hash = document.URL.substr(document.URL.indexOf('#'));
+		    var new_position = $(hash).offset();
+		    window.scrollTo(new_position.left,new_position.top);
+
 	
 		});
 	 
@@ -59,7 +60,9 @@
 			$(document.body).animate({
 			    'scrollTop':   $(tag).offset().top - 40
 			}, 2000);
+			window.location.hash = tag;
 		}
+		
 		
 		
 	</script> 
@@ -193,128 +196,130 @@ approaches to a large extent with less runtime.},
 
 
 <div class="tabs">
-					<ul>
-						<li><a href="#umblatex">UMB LaTeX Homework Template with
-								Examples</a></li>
-					</ul>
-					<div id="umblatex" style="">
-					<a href="https://umb-latex-homework.googlecode.com/svn/trunk/">
-						<img style="width: 300px;" src="img/umblatex.png" />
-					</a>
+<h2 href="#umblatex">UMB LaTeX Homework Template with Examples</h2>
+	<div id="umblatex" style="">
+	<a href="https://umb-latex-homework.googlecode.com/svn/trunk/">
+		<img style="width: 300px;" src="img/umblatex.png" />
+	</a>
 
-						<p>I made a LaTeX homework template so that students at UMB
-							can hit the ground running with LaTeX. This template includes
-							standard features such as a title page, header and footer with
-							page numbers and name, margin and spacing, as well as examples of
-							LaTeX features I used as an undergraduate.</p>
-						<p>
-							<img class="border" style="width: 300px;" src="img/umblatex-dfa.png" /> 
-							<img class="border" style="width: 300px;" src="img/umblatex-tree.png" />
-							<br>The
-							template explains how to draw Automatons such as DFAs, NFAs, and
-							PDAs. It's much easier to copy and paste a DFA then to redraw
-							one. It also includes examples for drawing trees.
-							These examples use the Tikz library so all code is contained
-							inside the .tex file.
+		<p>I made a LaTeX homework template so that students at UMB
+			can hit the ground running with LaTeX. This template includes
+			standard features such as a title page, header and footer with
+			page numbers and name, margin and spacing, as well as examples of
+			LaTeX features I used as an undergraduate.</p>
+		<p>
+			<img class="border" style="width: 300px;" src="img/umblatex-dfa.png" /> 
+			<img class="border" style="width: 300px;" src="img/umblatex-tree.png" />
+			<br>The
+			template explains how to draw Automatons such as DFAs, NFAs, and
+			PDAs. It's much easier to copy and paste a DFA then to redraw
+			one. It also includes examples for drawing trees.
+			These examples use the Tikz library so all code is contained
+			inside the .tex file.
 
-						</p>
+		</p>
 
-						<p>
-							<img class="border" style="width: 300px;" src="img/umblatex-alg.png" /><br>
-							Examples for writing algorithms with numbers lines and scope lines for "for" 
-							and "if" statements are included.
+		<p>
+			<img class="border" style="width: 300px;" src="img/umblatex-alg.png" /><br>
+			Examples for writing algorithms with numbers lines and scope lines for "for" 
+			and "if" statements are included.
 
-						</p>
-						<p>
-							<img class="border" style="width: 300px;" src="img/umblatex-matrix.png" />
-							<img class="border" style="width: 300px;" src="img/umblatex-table.png" />
-							<br>
-							Examples of matrices and tables are included. Many variations are used in 
-							practice and so many variations are included.
+		</p>
+		<p>
+			<img class="border" style="width: 300px;" src="img/umblatex-matrix.png" />
+			<img class="border" style="width: 300px;" src="img/umblatex-table.png" />
+			<br>
+			Examples of matrices and tables are included. Many variations are used in 
+			practice and so many variations are included.
 
-						</p>
-						<br> <br>
-						<div style="text-align: left">
-							<a href="https://umb-latex-homework.googlecode.com/svn/trunk/">SVN
-								Access to Source</a><br> <a
-								href="http://texlipse.sourceforge.net/">Texlipse plugin for
-								Eclipse</a><br>
-						</div>
-					</div>
-				</div>
-
-
-
-
-				<div class="tabs">
-					<ul>
-						<li><a href="#hackingjavaapplets">Hacking: Modern Day
-								Exploits with Java Applets</a></li>
-					</ul>
-					<div id="hackingjavaapplets" style="height: 300px;">
-						<img style="float: right;" src="talks/IntroCyberSecurity.png" />
-
-						This is about the dangers of trust in todays world. I first talk
-						about XSS attacks using Java Applets because they have a different
-						same-origin policy then JavaScript AJAX requests. I then talk
-						about how dangerous signed Applet Jars are if you have trusted the
-						CA that signed the Jar. <br> <br> <br> <br> <br>
-						<div style="text-align: left">
-							<a href="https://sites.google.com/site/umbcsclub/">UMB CS
-								Club</a><br> <br> <br> <a
-								href="http://prezi.com/fqfpw3hxtdkb/java-applet-hacking/">View
-								sides on Prezi.com</a><br> <a
-								href="talks/java-applet-hacking.zip">Download presentation</a><br>
-						</div>
-					</div>
-				</div>
-
-				<div class="tabs" style="-webkit-transform: rotate(1deg);"> 
-		<ul> 
-			<li><a href="#mitctf">MITCTF 2011</a></li> 
-		</ul> 
-		<div id="mitctf" style="height:410px;text-align: left;">
-		<img style="float:right; padding: 50px;" src="img/mitctfroot.jpg" />
-		
-		
-		<div style=" padding: 10px; width:650px;">
-		<h1>2011 MIT Lincoln Laboratory / CSAIL Capture the Flag Competition</h1>
-		A team from UMB consisting of me, Veronica Carrillo Marquez, 
-		Fabio Elia, and Henry Z Lo  won 2nd place.  We crafted our own 
-		exploit during the competition that was used to erase all by one 
-		opposing teams hard drive.  We were able to obtain a shell by 
-		creating a specially crafted HTTP cookie that had access to a 
-		poorly filtered eval() call. We were able to avoid specific function 
-		names in order to launch a remote interactive shell using PHP pipes.  
-		This method used an RPC call in wordpress which didn't leave any traces 
-		in the log files. Our exploit and payload needed to be base64 encoded 
-		which made it very hard to reuse by other teams if they had someone 
-		captured the attack in action. We scripted the creation of payloads 
-		which allowed us to change ports and ip addresses to counter other
-		 teams defensive measures.  
-		<br>
-		Once we gained a shell on the target machines we were able to use a
-		 recently discovered LPE to obtain root permissions.  The attack was
-		  sloppy and caused a kernel oops when we disconnected.  Next year we
-		   will be more prepared for post-exploitation.
-		
-		
-		<br>
-		
-		<a href="http://mitctf2011.wikispaces.com/">MIT CTF 2011 Website</a><br>
-		<a href="http://www.cs.umb.edu/news_and_events/announcements/162/">UMB CS Dept news</a><br>
-		
+		</p>
+		<br> <br>
+		<div style="text-align: left">
+			<a href="https://umb-latex-homework.googlecode.com/svn/trunk/">SVN
+				Access to Source</a><br> <a
+				href="http://texlipse.sourceforge.net/">Texlipse plugin for
+				Eclipse</a><br>
 		</div>
-		</div> 
+	</div>
+</div>
+
+
+
+
+
+
+<div class="tabs">
+<h2>Hacking: Modern Day Exploits with Java Applets</h2>
+				
+	<div id="hackingjavaapplets">
+	<p>
+		<img style="float: right;" src="talks/IntroCyberSecurity.png" />
+
+		This is about the dangers of trust in todays world. I first talk
+		about XSS attacks using Java Applets because they have a different
+		same-origin policy then JavaScript AJAX requests. I then talk
+		about how dangerous signed Applet Jars are if you have trusted the
+		CA that signed the Jar. <br> <br> <br> <br> <br>
+		<div style="text-align: left">
+			<a href="https://sites.google.com/site/umbcsclub/">UMB CS
+				Club</a><br> <br> <br> <a
+				href="http://prezi.com/fqfpw3hxtdkb/java-applet-hacking/">View
+				sides on Prezi.com</a><br> <a
+				href="talks/java-applet-hacking.zip">Download presentation</a><br>
+		</div>
+	</p>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="tabs" style="-webkit-transform: rotate(-0.1deg);"> 
+		<h2>2011 MIT Lincoln Laboratory / CSAIL Capture the Flag Competition</h2> 
+	<div id="mitctf" style="text-align: left;">
+	<p>
+	<img style="float:right; padding: 50px;" src="img/mitctfroot.jpg" />
+	
+	
+	<div style=" padding: 10px;">
+	A team from UMB consisting of me, Veronica Carrillo Marquez, 
+	Fabio Elia, and Henry Z Lo  won 2nd place.  We crafted our own 
+	exploit during the competition that was used to erase all by one 
+	opposing teams hard drive.  We were able to obtain a shell by 
+	creating a specially crafted HTTP cookie that had access to a 
+	poorly filtered eval() call. We were able to avoid specific function 
+	names in order to launch a remote interactive shell using PHP pipes.  
+	This method used an RPC call in wordpress which didn't leave any traces 
+	in the log files. Our exploit and payload needed to be base64 encoded 
+	which made it very hard to reuse by other teams if they had someone 
+	captured the attack in action. We scripted the creation of payloads 
+	which allowed us to change ports and ip addresses to counter other
+	 teams defensive measures.  
+	<br>
+	Once we gained a shell on the target machines we were able to use a
+	 recently discovered LPE to obtain root permissions.  The attack was
+	  sloppy and caused a kernel oops when we disconnected.  Next year we
+	   will be more prepared for post-exploitation.
+	
+	</p>
+	<br>
+	
+	<a href="http://mitctf2011.wikispaces.com/">MIT CTF 2011 Website</a><br>
+	<a href="http://www.cs.umb.edu/news_and_events/announcements/162/">UMB CS Dept news</a><br>
+	
+	</div>
 	</div> 
+</div> 
 	
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#acmsigspatial2011">ACM SIGSPATIAL 2011</a></li> 
-		</ul> 
-		<div id="acmsigspatial2011">
+<div id="acmsigspatial2011">
+<h2>ACM SIGSPATIAL 2011</h2> 
 
-		<center>
+
 		<p>
 			<img src="other/sigspatial_pres_s.jpg" />
 		</p>
@@ -345,18 +350,16 @@ approaches to a large extent with less runtime.},
 						achieves a higher accuracy than other existing randomized
 						approaches to a large extent with less runtime.</p>
 			
-		</center>
+
 		</div>
 	</div> 	
 	
 	
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#googlevisit2011">Google Visit</a></li> 
-		</ul> 
+		<h2>Google Visit</h2> 
 		<div id="googlevisit2011">
 
-		<center>
+
 		<p>
 			<img src="other/android_bld_s.jpg" />
 			
@@ -366,19 +369,18 @@ approaches to a large extent with less runtime.},
 			<p>
 			In November I visited the Google HQ in Mountain View, CA. Top picture from left to right Judd Reed, Siyi Liu, me, Sean O'Malley.
 			</p>
-		</center>
+
 		</div>
 	</div> 
 	
 
 
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#chrismetasploit">Rapid7 Product Marketing</a></li> 
-		</ul> 
-		<div id="chrismetasploit" style="height:500px;">
+		<h2>Rapid7 Product Marketing</h2> 
+		<div id="chrismetasploit" >
 		<p>
-			<img style="float:right;" src="other/chris_metasploit.jpg" />
+			<img src="other/chris_metasploit.jpg" />
+			<br>
 			Me and the Product Marketing Manager at Rapid7, Christian Kirsch. Rapid7 supports Metasploit and NeXpose.
 			
 			<br/><br/>
@@ -396,9 +398,7 @@ approaches to a large extent with less runtime.},
 
 
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#numbers">Illegal Numbers</a></li> 
-		</ul> 
+		<h2>Illegal Numbers</h2> 
 		<div id="numbers" >
 		<p>
 			It has come to my attention that this number and numbers like it are illegal.  I find that outrageous and I hope you do too. <br/><br/>
@@ -413,9 +413,7 @@ pub: C2 D4 AA F3 19 35 50 19 AF 99 D4 4E 2B 58 CA 29 25 2C 89 12 3D 11 D6 21 8F 
 	</div> 	
 	
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#salt">Utah Salt Flats</a></li> 
-		</ul> 
+		<h2>Utah Salt Flats</h2> 
 		<div id="salt" >
 	
 		<p>
@@ -429,10 +427,8 @@ pub: C2 D4 AA F3 19 35 50 19 AF 99 D4 4E 2B 58 CA 29 25 2C 89 12 3D 11 D6 21 8F 
 	</div> 	
 	
 	
-	<div class="tabs"> 
-		<ul> 
-			<li><a href="#secprofile">Security Profile of a Web Browser</a></li> 
-		</ul> 
+	<!-- <div class="tabs"> 
+		<h2>Security Profile of a Web Browser</h2> 
 		<div id="secprofile" >
 	
 		<p>
@@ -445,13 +441,15 @@ pub: C2 D4 AA F3 19 35 50 19 AF 99 D4 4E 2B 58 CA 29 25 2C 89 12 3D 11 D6 21 8F 
 		
 		</div> 
 	</div> 
-	
+	 -->
+	 
+	 
+	 
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#ianeclipse">Eclipse Marketing</a></li> 
-		</ul> 
-		<div id="ianeclipse" style="height:400px;">
-		<img style="float:right;" src="other/ianeclipse.jpg" />
+		<h2>Eclipse Marketing</h2> 
+		<div id="ianeclipse" >
+		<img src="other/ianeclipse.jpg" />
+		<br>
 		During an Eclipse Demo Day for Indigo I met Ian Skerrett the marketing director of the Eclipse Foundation 
 		
 		<br/><br/>
@@ -476,15 +474,13 @@ pub: C2 D4 AA F3 19 35 50 19 AF 99 D4 4E 2B 58 CA 29 25 2C 89 12 3D 11 D6 21 8F 
 	
 	
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#marsweekend">Mars Weekend</a></li>
-		</ul> 
+		<h2>Mars Weekend</h2> 
 		<div id="marsweekend" >
 		<center>
 		<img src="other/marsweekend.JPG" alt="Ron Li, Joseph Paul Cohen, Wei Ding"/>
 		</center>
 		<br/>
-		<a href="craterseeker/game"><img style="float:right;" src="craterseeker/craterseeker_s.png" /></a>
+		<a href="craterseeker/game"><img src="craterseeker/craterseeker_s.png" /></a>
 		
 		Wei Ding and I organized a Mars Weekend event at the Museum of Science Boston.  This event is part of an outreach project to educate the public on the work NASA is doing to explore Mars<br/><br/>
 		
@@ -506,7 +502,6 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 		<br/><br/>
 		Event Pages:<br/>
 
-		<a href="http://www.mos.org/events_activities/events&d=4981">http://www.mos.org/events_activities/events&d=4981</a><br/>
 		<a href="http://upcoming.yahoo.com/event/8096182/MA/Boston/Mars-Weekend/Museum-of-Science/?ps=5">http://upcoming.yahoo.com/event/8096182/MA/Boston/Mars-Weekend/Museum-of-Science/?ps=5</a><br/>
 		<a href="http://www.yelp.com/events/boston-mars-weekend">http://www.yelp.com/events/boston-mars-weekend</a><br/>
 		<a href="http://eventful.com/boston/events/mars-weekend-/E0-001-039211234-6@2011060410">http://eventful.com/boston/events/mars-weekend-/E0-001-039211234-6@2011060410</a><br/>
@@ -528,11 +523,9 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 	
 	
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#hackinglessonslearned">Hacking: Lessons Learned</a></li> 
-		</ul> 
-		<div id="hackinglessonslearned" style="height:300px;">
-		<img style="float:right;" src="talks/IMG_0410_s.JPG" />
+		<h2>Hacking: Lessons Learned</h2> 
+		<div id="hackinglessonslearned" >
+		<img src="talks/IMG_0410_s.JPG" />
 		
 		This was a kick off talk to create a security group at UMB. 
 		To get students interested in computer security.
@@ -549,11 +542,9 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 
 		
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#gravityscript">GravityScript</a></li> 
-		</ul> 
+		<h2>GravityScript</h2> 
 		<div id="Gravityscript">
-		<center>
+
 		<p>
 		<img  src="http://gravityscript.googlecode.com/svn/trunk/gravityscript.png" height="300px"/>
 		</p>
@@ -563,7 +554,7 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 		<p>If you include this script or eval this javascript after the body tag has loaded it will do it's awesome thing. </p>
 
 <b>Demo:</b> <a href="pwn/demos/wordpress.htm">pwn/demos/wordpress.htm</a>
-		</center>
+
 		<br>
 		<a href="http://code.google.com/p/gravityscript/">Google Code Site</a><br>
 		
@@ -571,14 +562,12 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 	</div> 
 	
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#neccdc">NECCDC</a></li> 
-		</ul> 
+		<h2>NECCDC</h2> 
 		<div id="neccdc">
 		<center>
 			<img alt="team" src="other/neccdc.jpg">
-		<br/>
 		</center>
+		<br/>
 		In 2011 I competed in the Northeast Collegiate Cyber Defense Competition (NECCDC) 
 		at EMC's Franklin Training Facility.  
 		The team is shown left to right as Francis Isabel, Ron Cheung
@@ -596,16 +585,15 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 	</div> 	
 	
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#kml">Java KML generation and display</a></li> 
-		</ul> 
+		<h2>Java KML generation and display</h2> 
 		<div id="kml">
 		<center>
 		<a href="zipcodes">
 			<img alt="display" src="zipcodes/MAzips.png">
 		</a>
-		<br/>
+
 		</center>
+		<br/>
 		This is a sample of many things. Java code to generate a KML file 
 		programmatically and using the Google Earth plugin to showcase data on a 
 		website.
@@ -621,9 +609,7 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 	
 	
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#osuvisit">OSU MER Rover GPS Team Visit</a></li> 
-		</ul> 
+		<h2>OSU MER Rover GPS Team Visit</h2> 
 		<div id="osuvisit">
 		<center>
 		<img alt="team" src="osu/osu_rover_gps_team.JPG"><br/>
@@ -638,9 +624,7 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 	</div> 
 
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#javatutor">Java Tutoring</a></li> 
-		</ul> 
+		<h2>Java Tutoring</h2> 
 		<div id="javatutor">
 		<img alt="duke" src="javatutor/duke.png" style="float:right;">
 		<br>
@@ -702,9 +686,7 @@ Please install Eclipse if you can otherwise have DrJava.<br>
 
 
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#tgl2">Presentation at the 2010 M.A.S.S. and MassCUE Annual Technology Conference</a></li> 
-		</ul> 
+		<h2>Presentation at the 2010 M.A.S.S. and MassCUE Annual Technology Conference</h2> 
 		<div id="tgl2">
 		<center>
 		<img alt="screenshot" src="tgl2/talk.jpg" >
@@ -730,9 +712,7 @@ Please install Eclipse if you can otherwise have DrJava.<br>
 
 
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#observer">Observer Design Pattern Example</a></li> 
-		</ul> 
+		<h2>Observer Design Pattern Example</h2> 
 		<div id="observer">
 		<center>
 		<a href="observerdesignpattern/ObserverDesignPattern.jnlp">
@@ -764,9 +744,7 @@ Please install Eclipse if you can otherwise have DrJava.<br>
 	</div> 	
 	-->
 	<div class="tabs"> 
-		<ul> 
-			<li><a href="#tabs-3">July 29th 2010 Computing Camp</a></li> 
-		</ul> 
+		<h2>July 29th 2010 Computing Camp</h2> 
 		<div id="tabs-3">
 		<center>
 		<img alt="award" src="compcamp/IMGP1891_s.jpg"><br>

