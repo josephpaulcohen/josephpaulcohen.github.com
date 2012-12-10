@@ -386,10 +386,10 @@ dd h4 { margin:15px 0 0 0; }
 		background-position: 39%;
 	}
 	.content-secondary {
-		width: 34%;
+		width: 250px;
 	}
 	.content-primary {
-		width: 56%;
+		width: 65%;
 		padding-right: 1%;
 	}
 }
