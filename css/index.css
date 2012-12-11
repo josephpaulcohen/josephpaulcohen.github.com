@@ -271,6 +271,9 @@ dd h4 { margin:15px 0 0 0; }
 
 @media all and (min-width: 650px){
 	
+	.content {
+		width:650px;
+	}
 	.type-home .ui-content {
 		margin-top: 5px;
 	}
