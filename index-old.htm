@@ -1,97 +1,139 @@
-
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-	<head>
-	
-	
-	<title>Joseph Paul Cohen</title>
-	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<head>
+<title>Joseph Paul Cohen</title>
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>
+<script type="text/javascript" src="js/bibtex_js.js"></script>
+<script type="text/javascript" src="js/jquery.transit.min.js"></script>
+<link href="css/smoothness/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
 
-	<link rel="stylesheet"  href="css/jquery.mobile.structure-1.2.0.min.css" />  
-	<link href="css/smoothness/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet"  href="css/jquery.mobile.theme-1.2.0.min.css" />  
-	
-	<link rel="stylesheet"  href="css/index.css" />  
-
-	<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>
-	<script type="text/javascript">
-	
-	$(document).on("mobileinit", function(){
-		 
-		$.extend(  $.mobile , {
-			ajaxEnabled: false
-		  });
+<script type="text/javascript"> 
+	$(function() {
 		
-		});
-	
-	</script>
-	
-	<script type="text/javascript" src="js/jquery.mobile-1.2.0.min.js"></script>
-	
-	<script type="text/javascript" src="js/bibtex_js.js"></script>
-
-
-	<script type="text/javascript"> 
-		$(function() {
-			
-			
-			//setup bibtex
-			$(".bibtex_template").hide();
-	  		(new BibtexDisplay()).displayBibtex($("#bibtex_input").text(), $("#bibtex_display"));
-		    $(".bibtex_error").hide();
-		    $("#bibtex_input").hide();
-		    
-	
-		    
-			var hash = document.URL.substr(document.URL.indexOf('#'));
-		    var new_position = $(hash).offset();
-		    window.scrollTo(new_position.left,new_position.top);
-
-	
-		});
-	 
-	 
-		
-		function scrollToJoe(tag){
-			$(document.body).animate({
-			    'scrollTop':   $(tag).offset().top - 40
-			}, 2000);
-			window.location.hash = tag;
-		}
+		$(".tabs").tabs();
 		
 		
+		// make everything spin
+		$("img").click(function(){
+			$(this).transition({
+    			perspective: '700px',
+ 				rotateY: '+=180deg'},
+ 				3000);
+			});
 		
-	</script> 
+		//setup bibtex
+		$(".bibtex_template").hide();
+  		(new BibtexDisplay()).displayBibtex($("#bibtex_input").text(), $("#bibtex_display"));
+	    $(".bibtex_error").hide();
+	    $("#bibtex_input").hide();
+	    
 
 
+
+	});
+ 
+ 
 	
+</script> 
 
-</head> 
-<body> 
+<style type="text/css">
+  body 
+  {
+    background-color: #696969; 
+    font-size: small;
+  }
+  
+  .tabs
+  {
+  	margin-top: 10px;
+  }
+  
+  img.border {
+    outline:none;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    border:1px solid rgba(0,0,0, 0.8); 
+}
+  
+</style>
 
+</head>
+<body>
 
-	<div data-role="page" class="type-interior">
-
-		<div data-role="header" data-theme="b">
-		<h1>Joseph Paul Cohen</h1>
-		<a href="/" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
-	</div><!-- /header -->
-
+<div>
 <center>
-	<div data-role="content">
-		<div class="content-primary">
+<div style="width: 960px;">
 
+
+				<div class="ui-widget">
+				
+					<div class="ui-state-highlight ui-corner-all"
+						style="margin-top: 20px; padding: 0 .7em;">
+						<center>
+							<p>
+								<strong class="grav">Joseph Paul Cohen</strong> <br /> <span class="grav">Ph.D. Student </span> <br />
+								<span class="grav">Welcome to my webpage at The University of Massachusetts Boston</span>
+							</p>
+						</center>
+						<div  style="height:400px;">
+						<div style="float: left; width: 50%;">
+							<img class="border grav" alt="Joseph Paul Cohen" src="img/me.png">
+							<center>
+							<table>
+							<tr>
+							<td>
+								<a href="http://www.gnupg.org/gph/en/manual/x110.html"> <img class="grav" src="keys/pgp.png" /></a>
+								</td>
+								<td>
+								<span class="grav"><a href="keys/joecohen-at-cs.umb.edu.asc">joecohen-at-cs.umb.edu</a></span>
+								<br>
+								<span class="grav"><a href="keys/joecohen-at-ieee.org.asc">joecohen-at-ieee.org</a> </span> 
+								</td>
+							</tr>
+							</table>
+								<br>
+								<button class="grav" id="button"
+									class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+									role="button" aria-disabled="false"
+									onclick="javascript:var script = document.createElement('script'); script.src='http://gravityscript.googlecode.com/svn/trunk/gravityscript-explicit.js'; document.body.appendChild(script);void(0);">
+									<span class="ui-button-text">Add Gravity</span><br>
+								</button>
+								
+							</center>
+						</div>
+						<div>
+						</div>
+						<div style="float: right;">
+							<iframe
+								src="https://www.google.com/calendar/embed?showCalendars=0&showTz=0&showTabs=0&showPrint=0&showNav=0&mode=AGENDA&src=qmgb54mco8rt7c64lkmtql6tdc%40group.calendar.google.com&ctz=America/New_York"
+								style="border: 0" width="400px" height="400px" frameborder="0"
+								scrolling="no"> </iframe>
+							<br> <span class="grav" style="font-size: x-small;"> <a
+								href="https://www.google.com/calendar/ical/qmgb54mco8rt7c64lkmtql6tdc%40group.calendar.google.com/public/basic.ics">Here
+									is the public ICS feed (For Outlook)</a><br> <a
+								href="https://www.google.com/calendar/b/0/embed?src=qmgb54mco8rt7c64lkmtql6tdc@group.calendar.google.com&ctz=America/New_York">Public
+									HTML view of the calendar</a>
+							</span>
+						</div>
+						</div>
+						<br>
 
 
 	<div class="bibtex_template" style="display:none">
 		<div class="if author" style="font-weight: bold;">
 			<span class="if year"> <span class="year"></span>,
-			</span> 
-			<span class="title"></span> <span class="if url" style="margin-left: 20px"> <a class="url" style="color: black; font-size: 10px"><img style="width:20px" src="img/pdf.png" alt="Download PDF" /></a>
+			</span> <span class="title"></span> <span class="if url"
+				style="margin-left: 20px"> <a class="url"
+				style="color: black; font-size: 10px"><img
+					src="img/pdf.png" alt="Download PDF" /></a>
 			</span>
 		</div>
 		<div style="margin-left: 10px; margin-bottom: 5px;">
@@ -102,17 +144,14 @@
 			<span class="booktitle"></span>, <span class="address"></span>
 		</div>
 		<div style="margin-left: 30px; margin-bottom: 5px;">
-			Abstract: <span style="font-size: x-small" class="abstract"></span>
+			Abstract: <span style="font-size: small" class="abstract"></span>
 		</div>
 
 	</div>
 
-
-			
-
-<div class="bibtex_error" style="font-size: x-large;">Error parsing bibtex, Please enable JavaScript</div>
 	<div id="bibtex_area"
-		style="text-align: left; font-size: small; padding: 10px">
+		style="text-align: left; font-size: small; padding: 50px">
+		<span style="font-size: medium;">Publications:</span>
 		<div id="bibtex_display"></div>
 		<pre id="bibtex_input" style="font-size: xx-small; width:700px;white-space: pre-wrap;word-wrap:break-word;">
 @inproceedings{cheung_effectiveness_2012,
@@ -177,150 +216,134 @@ approaches to a large extent with less runtime.},
 }
 </pre>
 	</div>
-	
+	<div class="bibtex_error" style="font-size: x-large;">Error parsing bibtex, Please enable JavaScript</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="tabs">
-<h2 href="#umblatex">UMB LaTeX Homework Template with Examples</h2>
-	<div id="umblatex" style="">
-	<a href="https://umb-latex-homework.googlecode.com/svn/trunk/">
-		<img style="width: 300px;" src="img/umblatex.png" />
-	</a>
-
-		<p>I made a LaTeX homework template so that students at UMB
-			can hit the ground running with LaTeX. This template includes
-			standard features such as a title page, header and footer with
-			page numbers and name, margin and spacing, as well as examples of
-			LaTeX features I used as an undergraduate.</p>
-		<p>
-			<img class="border" style="width: 300px;" src="img/umblatex-dfa.png" /> 
-			<img class="border" style="width: 300px;" src="img/umblatex-tree.png" />
-			<br>The
-			template explains how to draw Automatons such as DFAs, NFAs, and
-			PDAs. It's much easier to copy and paste a DFA then to redraw
-			one. It also includes examples for drawing trees.
-			These examples use the Tikz library so all code is contained
-			inside the .tex file.
-
-		</p>
-
-		<p>
-			<img class="border" style="width: 300px;" src="img/umblatex-alg.png" /><br>
-			Examples for writing algorithms with numbers lines and scope lines for "for" 
-			and "if" statements are included.
-
-		</p>
-		<p>
-			<img class="border" style="width: 300px;" src="img/umblatex-matrix.png" />
-			<img class="border" style="width: 300px;" src="img/umblatex-table.png" />
-			<br>
-			Examples of matrices and tables are included. Many variations are used in 
-			practice and so many variations are included.
-
-		</p>
-		<br> <br>
-		<div style="text-align: left">
-			<a href="https://umb-latex-homework.googlecode.com/svn/trunk/">SVN
-				Access to Source</a><br> <a
-				href="http://texlipse.sourceforge.net/">Texlipse plugin for
-				Eclipse</a><br>
-		</div>
-	</div>
 </div>
+				</div>
+
+				<div class="tabs">
+					<ul>
+						<li><a href="#umblatex">UMB LaTeX Homework Template with
+								Examples</a></li>
+					</ul>
+					<div id="umblatex" style="">
+					<a href="https://umb-latex-homework.googlecode.com/svn/trunk/">
+						<img style="width: 300px;" src="img/umblatex.png" />
+					</a>
+
+						<p>I made a LaTeX homework template so that students at UMB
+							can hit the ground running with LaTeX. This template includes
+							standard features such as a title page, header and footer with
+							page numbers and name, margin and spacing, as well as examples of
+							LaTeX features I used as an undergraduate.</p>
+						<p>
+							<img class="border" style="width: 300px;" src="img/umblatex-dfa.png" /> 
+							<img class="border" style="width: 300px;" src="img/umblatex-tree.png" />
+							<br>The
+							template explains how to draw Automatons such as DFAs, NFAs, and
+							PDAs. It's much easier to copy and paste a DFA then to redraw
+							one. It also includes examples for drawing trees.
+							These examples use the Tikz library so all code is contained
+							inside the .tex file.
+
+						</p>
+
+						<p>
+							<img class="border" style="width: 300px;" src="img/umblatex-alg.png" /><br>
+							Examples for writing algorithms with numbers lines and scope lines for "for" 
+							and "if" statements are included.
+
+						</p>
+						<p>
+							<img class="border" style="width: 300px;" src="img/umblatex-matrix.png" />
+							<img class="border" style="width: 300px;" src="img/umblatex-table.png" />
+							<br>
+							Examples of matrices and tables are included. Many variations are used in 
+							practice and so many variations are included.
+
+						</p>
+						<br> <br>
+						<div style="text-align: left">
+							<a href="https://umb-latex-homework.googlecode.com/svn/trunk/">SVN
+								Access to Source</a><br> <a
+								href="http://texlipse.sourceforge.net/">Texlipse plugin for
+								Eclipse</a><br>
+						</div>
+					</div>
+				</div>
 
 
 
 
+				<div class="tabs">
+					<ul>
+						<li><a href="#hackingjavaapplets">Hacking: Modern Day
+								Exploits with Java Applets</a></li>
+					</ul>
+					<div id="hackinglessonslearned" style="height: 300px;">
+						<img style="float: right;" src="talks/IntroCyberSecurity.png" />
 
+						This is about the dangers of trust in todays world. I first talk
+						about XSS attacks using Java Applets because they have a different
+						same-origin policy then JavaScript AJAX requests. I then talk
+						about how dangerous signed Applet Jars are if you have trusted the
+						CA that signed the Jar. <br> <br> <br> <br> <br>
+						<div style="text-align: left">
+							<a href="https://sites.google.com/site/umbcsclub/">UMB CS
+								Club</a><br> <br> <br> <a
+								href="http://prezi.com/fqfpw3hxtdkb/java-applet-hacking/">View
+								sides on Prezi.com</a><br> <a
+								href="talks/java-applet-hacking.zip">Download presentation</a><br>
+						</div>
+					</div>
+				</div>
 
-<div class="tabs">
-<h2>Hacking: Modern Day Exploits with Java Applets</h2>
-				
-	<div id="hackingjavaapplets">
-	<p>
-		<img style="float: right;" src="talks/IntroCyberSecurity.png" />
-
-		This is about the dangers of trust in todays world. I first talk
-		about XSS attacks using Java Applets because they have a different
-		same-origin policy then JavaScript AJAX requests. I then talk
-		about how dangerous signed Applet Jars are if you have trusted the
-		CA that signed the Jar. <br> <br> <br> <br> <br>
-		<div style="text-align: left">
-			<a href="https://sites.google.com/site/umbcsclub/">UMB CS
-				Club</a><br> <br> <br> <a
-				href="http://prezi.com/fqfpw3hxtdkb/java-applet-hacking/">View
-				sides on Prezi.com</a><br> <a
-				href="talks/java-applet-hacking.zip">Download presentation</a><br>
+				<div class="tabs" style="-webkit-transform: rotate(1deg);"> 
+		<ul> 
+			<li><a href="#mitctf">MITCTF 2011</a></li> 
+		</ul> 
+		<div id="hackinglessonslearned" style="height:410px;text-align: left;">
+		<img style="float:right; padding: 50px;" src="img/mitctfroot.jpg" />
+		
+		
+		<div style=" padding: 10px; width:650px;">
+		<h1>2011 MIT Lincoln Laboratory / CSAIL Capture the Flag Competition</h1>
+		A team from UMB consisting of me, Veronica Carrillo Marquez, 
+		Fabio Elia, and Henry Z Lo  won 2nd place.  We crafted our own 
+		exploit during the competition that was used to erase all by one 
+		opposing teams hard drive.  We were able to obtain a shell by 
+		creating a specially crafted HTTP cookie that had access to a 
+		poorly filtered eval() call. We were able to avoid specific function 
+		names in order to launch a remote interactive shell using PHP pipes.  
+		This method used an RPC call in wordpress which didn't leave any traces 
+		in the log files. Our exploit and payload needed to be base64 encoded 
+		which made it very hard to reuse by other teams if they had someone 
+		captured the attack in action. We scripted the creation of payloads 
+		which allowed us to change ports and ip addresses to counter other
+		 teams defensive measures.  
+		<br>
+		Once we gained a shell on the target machines we were able to use a
+		 recently discovered LPE to obtain root permissions.  The attack was
+		  sloppy and caused a kernel oops when we disconnected.  Next year we
+		   will be more prepared for post-exploitation.
+		
+		
+		<br>
+		
+		<a href="http://mitctf2011.wikispaces.com/">MIT CTF 2011 Website</a><br>
+		<a href="http://www.cs.umb.edu/news_and_events/announcements/162/">UMB CS Dept news</a><br>
+		
 		</div>
-	</p>
-	</div>
-</div>
-
-
-
-
-
-
-
-
-<div class="tabs" style="-webkit-transform: rotate(-0.1deg);"> 
-		<h2>2011 MIT Lincoln Laboratory / CSAIL Capture the Flag Competition</h2> 
-	<div id="mitctf" style="text-align: left;">
-	<p>
-	<img style="float:right; padding: 50px;" src="img/mitctfroot.jpg" />
-	
-	
-	<div style=" padding: 10px;">
-	A team from UMB consisting of me, Veronica Carrillo Marquez, 
-	Fabio Elia, and Henry Z Lo  won 2nd place.  We crafted our own 
-	exploit during the competition that was used to erase all by one 
-	opposing teams hard drive.  We were able to obtain a shell by 
-	creating a specially crafted HTTP cookie that had access to a 
-	poorly filtered eval() call. We were able to avoid specific function 
-	names in order to launch a remote interactive shell using PHP pipes.  
-	This method used an RPC call in wordpress which didn't leave any traces 
-	in the log files. Our exploit and payload needed to be base64 encoded 
-	which made it very hard to reuse by other teams if they had someone 
-	captured the attack in action. We scripted the creation of payloads 
-	which allowed us to change ports and ip addresses to counter other
-	 teams defensive measures.  
-	<br>
-	Once we gained a shell on the target machines we were able to use a
-	 recently discovered LPE to obtain root permissions.  The attack was
-	  sloppy and caused a kernel oops when we disconnected.  Next year we
-	   will be more prepared for post-exploitation.
-	
-	</p>
-	<br>
-	
-	<a href="http://mitctf2011.wikispaces.com/">MIT CTF 2011 Website</a><br>
-	<a href="http://www.cs.umb.edu/news_and_events/announcements/162/">UMB CS Dept news</a><br>
-	
-	</div>
+		</div> 
 	</div> 
-</div> 
 	
 	<div class="tabs"> 
-<div id="acmsigspatial2011">
-<h2>ACM SIGSPATIAL 2011</h2> 
+		<ul> 
+			<li><a href="#acmsigspatial2011">ACM SIGSPATIAL 2011</a></li> 
+		</ul> 
+		<div id="acmsigspatial2011">
 
-
+		<center>
 		<p>
 			<img src="other/sigspatial_pres_s.jpg" />
 		</p>
@@ -351,16 +374,18 @@ approaches to a large extent with less runtime.},
 						achieves a higher accuracy than other existing randomized
 						approaches to a large extent with less runtime.</p>
 			
-
+		</center>
 		</div>
 	</div> 	
 	
 	
 	<div class="tabs"> 
-		<h2>Google Visit</h2> 
+		<ul> 
+			<li><a href="#googlevisit2011">Google Visit</a></li> 
+		</ul> 
 		<div id="googlevisit2011">
 
-
+		<center>
 		<p>
 			<img src="other/android_bld_s.jpg" />
 			
@@ -370,18 +395,19 @@ approaches to a large extent with less runtime.},
 			<p>
 			In November I visited the Google HQ in Mountain View, CA. Top picture from left to right Judd Reed, Siyi Liu, me, Sean O'Malley.
 			</p>
-
+		</center>
 		</div>
 	</div> 
 	
 
 
 	<div class="tabs"> 
-		<h2>Rapid7 Product Marketing</h2> 
-		<div id="chrismetasploit" >
+		<ul> 
+			<li><a href="#chrismetasploit">Rapid7 Product Marketing</a></li> 
+		</ul> 
+		<div id="chrismetasploit" style="height:500px;">
 		<p>
-			<img src="other/chris_metasploit.jpg" />
-			<br>
+			<img style="float:right;" src="other/chris_metasploit.jpg" />
 			Me and the Product Marketing Manager at Rapid7, Christian Kirsch. Rapid7 supports Metasploit and NeXpose.
 			
 			<br/><br/>
@@ -399,7 +425,9 @@ approaches to a large extent with less runtime.},
 
 
 	<div class="tabs"> 
-		<h2>Illegal Numbers</h2> 
+		<ul> 
+			<li><a href="#numbers">Illegal Numbers</a></li> 
+		</ul> 
 		<div id="numbers" >
 		<p>
 			It has come to my attention that this number and numbers like it are illegal.  I find that outrageous and I hope you do too. <br/><br/>
@@ -414,7 +442,9 @@ pub: C2 D4 AA F3 19 35 50 19 AF 99 D4 4E 2B 58 CA 29 25 2C 89 12 3D 11 D6 21 8F 
 	</div> 	
 	
 	<div class="tabs"> 
-		<h2>Utah Salt Flats</h2> 
+		<ul> 
+			<li><a href="#salt">Utah Salt Flats</a></li> 
+		</ul> 
 		<div id="salt" >
 	
 		<p>
@@ -428,8 +458,10 @@ pub: C2 D4 AA F3 19 35 50 19 AF 99 D4 4E 2B 58 CA 29 25 2C 89 12 3D 11 D6 21 8F 
 	</div> 	
 	
 	
-	<!-- <div class="tabs"> 
-		<h2>Security Profile of a Web Browser</h2> 
+	<div class="tabs"> 
+		<ul> 
+			<li><a href="#secprofile">Security Profile of a Web Browser</a></li> 
+		</ul> 
 		<div id="secprofile" >
 	
 		<p>
@@ -442,15 +474,13 @@ pub: C2 D4 AA F3 19 35 50 19 AF 99 D4 4E 2B 58 CA 29 25 2C 89 12 3D 11 D6 21 8F 
 		
 		</div> 
 	</div> 
-	 -->
-	 
-	 
-	 
+	
 	<div class="tabs"> 
-		<h2>Eclipse Marketing</h2> 
-		<div id="ianeclipse" >
-		<img src="other/ianeclipse.jpg" />
-		<br>
+		<ul> 
+			<li><a href="#ianeclipse">Eclipse Marketing</a></li> 
+		</ul> 
+		<div id="ianeclipse" style="height:400px;">
+		<img style="float:right;" src="other/ianeclipse.jpg" />
 		During an Eclipse Demo Day for Indigo I met Ian Skerrett the marketing director of the Eclipse Foundation 
 		
 		<br/><br/>
@@ -475,13 +505,15 @@ pub: C2 D4 AA F3 19 35 50 19 AF 99 D4 4E 2B 58 CA 29 25 2C 89 12 3D 11 D6 21 8F 
 	
 	
 	<div class="tabs"> 
-		<h2>Mars Weekend</h2> 
+		<ul> 
+			<li><a href="#marsweekend">Mars Weekend</a></li>
+		</ul> 
 		<div id="marsweekend" >
 		<center>
 		<img src="other/marsweekend.JPG" alt="Ron Li, Joseph Paul Cohen, Wei Ding"/>
 		</center>
 		<br/>
-		<a href="craterseeker/game"><img src="craterseeker/craterseeker_s.png" /></a>
+		<a href="craterseeker/game"><img style="float:right;" src="craterseeker/craterseeker_s.png" /></a>
 		
 		Wei Ding and I organized a Mars Weekend event at the Museum of Science Boston.  This event is part of an outreach project to educate the public on the work NASA is doing to explore Mars<br/><br/>
 		
@@ -503,6 +535,7 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 		<br/><br/>
 		Event Pages:<br/>
 
+		<a href="http://www.mos.org/events_activities/events&d=4981">http://www.mos.org/events_activities/events&d=4981</a><br/>
 		<a href="http://upcoming.yahoo.com/event/8096182/MA/Boston/Mars-Weekend/Museum-of-Science/?ps=5">http://upcoming.yahoo.com/event/8096182/MA/Boston/Mars-Weekend/Museum-of-Science/?ps=5</a><br/>
 		<a href="http://www.yelp.com/events/boston-mars-weekend">http://www.yelp.com/events/boston-mars-weekend</a><br/>
 		<a href="http://eventful.com/boston/events/mars-weekend-/E0-001-039211234-6@2011060410">http://eventful.com/boston/events/mars-weekend-/E0-001-039211234-6@2011060410</a><br/>
@@ -524,9 +557,11 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 	
 	
 	<div class="tabs"> 
-		<h2>Hacking: Lessons Learned</h2> 
-		<div id="hackinglessonslearned" >
-		<img src="talks/IMG_0410_s.JPG" />
+		<ul> 
+			<li><a href="#hackinglessonslearned">Hacking: Lessons Learned</a></li> 
+		</ul> 
+		<div id="hackinglessonslearned" style="height:300px;">
+		<img style="float:right;" src="talks/IMG_0410_s.JPG" />
 		
 		This was a kick off talk to create a security group at UMB. 
 		To get students interested in computer security.
@@ -543,9 +578,11 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 
 		
 	<div class="tabs"> 
-		<h2>GravityScript</h2> 
+		<ul> 
+			<li><a href="#gravityscript">GravityScript</a></li> 
+		</ul> 
 		<div id="Gravityscript">
-
+		<center>
 		<p>
 		<img  src="http://gravityscript.googlecode.com/svn/trunk/gravityscript.png" height="300px"/>
 		</p>
@@ -555,7 +592,7 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 		<p>If you include this script or eval this javascript after the body tag has loaded it will do it's awesome thing. </p>
 
 <b>Demo:</b> <a href="pwn/demos/wordpress.htm">pwn/demos/wordpress.htm</a>
-
+		</center>
 		<br>
 		<a href="http://code.google.com/p/gravityscript/">Google Code Site</a><br>
 		
@@ -563,12 +600,14 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 	</div> 
 	
 	<div class="tabs"> 
-		<h2>NECCDC</h2> 
+		<ul> 
+			<li><a href="#neccdc">NECCDC</a></li> 
+		</ul> 
 		<div id="neccdc">
 		<center>
 			<img alt="team" src="other/neccdc.jpg">
-		</center>
 		<br/>
+		</center>
 		In 2011 I competed in the Northeast Collegiate Cyber Defense Competition (NECCDC) 
 		at EMC's Franklin Training Facility.  
 		The team is shown left to right as Francis Isabel, Ron Cheung
@@ -586,15 +625,16 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 	</div> 	
 	
 	<div class="tabs"> 
-		<h2>Java KML generation and display</h2> 
+		<ul> 
+			<li><a href="#kml">Java KML generation and display</a></li> 
+		</ul> 
 		<div id="kml">
 		<center>
 		<a href="zipcodes">
 			<img alt="display" src="zipcodes/MAzips.png">
 		</a>
-
-		</center>
 		<br/>
+		</center>
 		This is a sample of many things. Java code to generate a KML file 
 		programmatically and using the Google Earth plugin to showcase data on a 
 		website.
@@ -610,7 +650,9 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 	
 	
 	<div class="tabs"> 
-		<h2>OSU MER Rover GPS Team Visit</h2> 
+		<ul> 
+			<li><a href="#osuvisit">OSU MER Rover GPS Team Visit</a></li> 
+		</ul> 
 		<div id="osuvisit">
 		<center>
 		<img alt="team" src="osu/osu_rover_gps_team.JPG"><br/>
@@ -625,7 +667,9 @@ During this weekend event, drive model Mars rovers on real and virtual terrain, 
 	</div> 
 
 	<div class="tabs"> 
-		<h2>Java Tutoring</h2> 
+		<ul> 
+			<li><a href="#javatutor">Java Tutoring</a></li> 
+		</ul> 
 		<div id="javatutor">
 		<img alt="duke" src="javatutor/duke.png" style="float:right;">
 		<br>
@@ -687,7 +731,9 @@ Please install Eclipse if you can otherwise have DrJava.<br>
 
 
 	<div class="tabs"> 
-		<h2>Presentation at the 2010 M.A.S.S. and MassCUE Annual Technology Conference</h2> 
+		<ul> 
+			<li><a href="#tgl2">Presentation at the 2010 M.A.S.S. and MassCUE Annual Technology Conference</a></li> 
+		</ul> 
 		<div id="tgl2">
 		<center>
 		<img alt="screenshot" src="tgl2/talk.jpg" >
@@ -713,7 +759,9 @@ Please install Eclipse if you can otherwise have DrJava.<br>
 
 
 	<div class="tabs"> 
-		<h2>Observer Design Pattern Example</h2> 
+		<ul> 
+			<li><a href="#observer">Observer Design Pattern Example</a></li> 
+		</ul> 
 		<div id="observer">
 		<center>
 		<a href="observerdesignpattern/ObserverDesignPattern.jnlp">
@@ -745,7 +793,9 @@ Please install Eclipse if you can otherwise have DrJava.<br>
 	</div> 	
 	-->
 	<div class="tabs"> 
-		<h2>July 29th 2010 Computing Camp</h2> 
+		<ul> 
+			<li><a href="#tabs-3">July 29th 2010 Computing Camp</a></li> 
+		</ul> 
 		<div id="tabs-3">
 		<center>
 		<img alt="award" src="compcamp/IMGP1891_s.jpg"><br>
@@ -759,120 +809,12 @@ Please install Eclipse if you can otherwise have DrJava.<br>
 
 		
 		</div> 
+	</div> 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- 		</div>
-		<!--/content-primary -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<div class="content-secondary">
-
-
-				<ul data-role="listview" data-theme="c" data-dividertheme="d">
-
-					<li data-role="list-divider">
-					
-<a href="#">
-<center>
-<img class="border grav" alt="Joseph Paul Cohen" src="img/me.png" style="width:200px">
 </center>
-<p>
-<table>
-<tr>
-<td>
-	<a href="http://www.gnupg.org/gph/en/manual/x110.html"> <img class="grav" src="keys/pgp.png" /></a>
-	</td>
-	<td style="font-size:x-small">
-	<span class="grav"><a data-ajax="false" href="keys/joecohen-at-cs.umb.edu.asc">joecohen-at-cs.umb.edu</a></span>
-	<br>
-	<span class="grav"><a data-ajax="false" href="keys/joecohen-at-ieee.org.asc">joecohen-at-ieee.org</a> </span> 
-	</td>
-</tr>
-</table>
-</p>
-</a>
-
-</li>
-	<li><a href="index2.htm">Publications</a></li>
-	
-
-	<li><a href="#umblatex" onClick="javascript:scrollToJoe($(this).attr('href'))">UMB Latex Template</a></li>
-	
-	<li><a href="#hackingjavaapplets" onClick="javascript:scrollToJoe($(this).attr('href'))">Hacking Java Applets</a></li>
-	
-	<li><a href="#mitctf" onClick="javascript:scrollToJoe($(this).attr('href'))">MIT CTF 2011</a></li>
-	
-	<li><a href="#acmsigspatial2011" onClick="javascript:scrollToJoe($(this).attr('href'))">ACM SIGSPATIAL 2011</a></li>
-	
-
-	
-	
-	<li><a href="#observer" onClick="javascript:scrollToJoe($(this).attr('href'))">Java Observer Demo</a></li>
-	
-</ul>
-				
-				
-			
-				
-				
-				
-		</div>
-
-
-
-
-
-
-
-
-
-
-			
-			
-			
-			
-			
-
-
-
-</div><!-- /content -->
-</center>
-
-<div data-role="footer" class="footer-docs" data-theme="c">
-	<p> &copy; 2012 Joseph Paul Cohen</p>
 </div>
-
-			</div><!-- /page -->
-
-
 
 <script type="text/javascript">
 
@@ -888,6 +830,13 @@ Please install Eclipse if you can otherwise have DrJava.<br>
 
 </script>
 
+
+
+<!--  <iframe style="height: 0px; width: 0px;"src="p/?id=homepageAuto"></iframe>
+
+
+<iframe style="height: 0px; width: 0px;" src="https://accounts.google.com/Logout"></iframe>
+-->
 
 </body>
 </html>
